@@ -1,42 +1,85 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/*Default Vite + React CSS
+---------------------------------------------------------------------*/
+
+
+/* Homepage styles
+---------------------------------------------------------------------*/
+
+*, html, body {
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    margin: 0;
+}
+body {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body, html {
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+section#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('/images/top_matriculant.jpg') center/cover no-repeat;
+  position: relative;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+section#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 36, 37, 0.5); /* Adjust color and opacity as needed */
+  z-index: 1;
 }
 
-.card {
-  padding: 2em;
+section#home > * {
+  position: relative;
+  z-index: 2;
 }
 
-.read-the-docs {
-  color: #888;
+/* Top Banner 
+----------------------------------------------------------------------*/
+.main-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
+.avatar-container {
+  width: 140px;
+  height: 175px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 7rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+
+.navbar ul {
+  list-style:none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+.navbar li {
+  margin-right: 2rem;
+}
+
