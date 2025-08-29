@@ -1,0 +1,97 @@
+/* src/styles/gpaWheel.css */
+/* GPA wheel styles */
+.gpa-wheel {
+  display: grid;
+  place-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  position: relative;
+  --track: #e6e8ee;
+  --text: #111827;
+  --value: #111827;
+  --grad-start: #6366f1; /* default gradient start */
+  --grad-end: #22c55e; /* default gradient end */
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  filter: drop-shadow(var(--shadow));
+}
+
+.gpa-svg {
+  display: block;
+}
+
+.gpa-track {
+  stroke: var(--track);
+}
+
+/* the gradient colors are set via currentColor stops using the theme class */
+.gpa-wheel stop:first-of-type {
+  stop-color: var(--grad-start);
+}
+.gpa-wheel stop:last-of-type {
+  stop-color: var(--grad-end);
+}
+
+.gpa-endcap {
+  fill: var(--grad-end);
+  transition: cx var(--gpa-duration, 900ms) ease,
+              cy var(--gpa-duration, 900ms) ease;
+}
+
+.gpa-caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.gpa-caption span {
+  font-size: 1.4rem;
+  opacity: 0.8;
+  translate: 0 -12px;
+}
+
+/* Animate only the properties we change */
+.gpa-progress {
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--gpa-duration, 900ms) ease;
+}
+
+/* endcap follows the ring tip */
+.gpa-endcap {
+  transition: cx var(--gpa-duration, 900ms) ease,
+              cy var(--gpa-duration, 900ms) ease;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .gpa-progress, .gpa-endcap { transition: none !important; }
+}
+
+/* Theme helpers (you can add more) */
+.gpa-accent {
+  --grad-start: #7c3aed; /* violet-600 */
+  --grad-end: #06b6d4; /* cyan-500 */
+}
+
+.gpa-green {
+  --grad-start: #16a34a; /* green-600 */
+  --grad-end: #22c55e; /* green-500 */
+}
+
+.gpa-royal {
+  --grad-start: #2563eb; /* blue-600 */
+  --grad-end: #9333ea; /* purple-600 */
+}
+
+/* Dark mode tweak if your site uses it */
+@media (prefers-color-scheme: dark) {
+  .gpa-wheel {
+    --track: #2a2f3a;
+    --text: #e5e7eb;
+    --value: #f8fafc;
+  }
+}

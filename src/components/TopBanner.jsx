@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/top_banner.css";
 
 const NAV_LINKS = [
   { href: "#home", label: "Home" },
@@ -18,7 +19,7 @@ export default function TopBanner({
     github: "https://github.com/",
     linkedin: "https://www.linkedin.com/",
   },
-  about = "About me goes here...",
+  about = "I am a passionate aspiring software engineer from Trinidad & Tobago with robust skills in application and web development and unwavering commitment to learning and growth.",
 }) {
   return (
     <section id="home">

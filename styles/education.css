@@ -1,0 +1,101 @@
+/* Education Styles
+-------------------------------------------------------------*/
+.education {
+  padding: 2rem;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 4rem;
+  border-left: 2px solid #333;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1rem;
+  top: 0.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.timeline-desc {
+  margin-left: 1.5rem;
+}
+
+.timeline-desc h3 {
+  margin: 0;
+  font-size: 2.1rem;
+}
+
+.timeline-desc p {
+  margin: 0.2rem 0 0;
+  color: #666;
+}
+
+.timeline-content {
+  margin-top: 2.5rem;
+  margin-left: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-content .row {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start;
+  gap: 5rem;
+  margin-bottom: 3rem;
+}
+
+/* Instagram Embed Styles */
+.ig-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.ig-wrap {
+  margin: 0;
+  max-width: 400px;
+}
+
+.instagram-media {
+  height: 400px;
+  width: 200px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.scholarship-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+/* Merit List Styles */
+.merit-list-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-top: 3rem;
+}
