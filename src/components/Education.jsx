@@ -1,17 +1,42 @@
 import React from "react";
 import GpaWheel from "./GPAWheel";
+import MeritCarousel from "./MeritCarousel";
 import InstagramEmbed from "./InstagramEmbed";
 import "../../styles/education.css";
 
 const MERIT_ITEMS = [
-  { year: "2023", title: "CAPE Pure Mathematics – Unit 2" },
-  { year: "2023", title: "CAPE Applied Mathematics – Unit 2" },
-  { year: "2022", title: "CAPE Computer Science – Unit 1" },
-  { year: "2022", title: "CAPE Information Technology – Unit 1" },
-  { year: "2022", title: "CAPE Pure Mathematics - Unit 1" },
-  { year: "2022", title: "CAPE Applied Mathematics - Unit 1" },
-  { year: "2021", title: "CSEC Mathematics - Unit 1" },
-  { year: "2021", title: "CSEC Physics - Unit 1" },
+  {
+    src: "/images/pure-u2.png",
+    title: "CAPE Pure Mathematics – Unit 2",
+    year: "2023",
+  },
+  {
+    src: "/images/applied-u2.png",
+    title: "CAPE Applied Mathematics – Unit 2",
+    year: "2023",
+  },
+  {
+    src: "/images/comp-sci-u1.png",
+    title: "CAPE Computer Science – Unit 1",
+    year: "2022",
+  },
+  {
+    src: "/images/info-tech-u1.png",
+    title: "CAPE Information Technology – Unit 1",
+    year: "2022",
+  },
+  {
+    src: "/images/pure-u1.png",
+    title: "CAPE Pure Mathematics - Unit 1",
+    year: "2022",
+  },
+  {
+    src: "/images/applied-u1.png",
+    title: "CAPE Applied Mathematics - Unit 1",
+    year: "2022",
+  },
+  { src: "/images/math.png", title: "CSEC Mathematics - Unit 1", year: "2021" },
+  { src: "/images/phys.png", title: "CSEC Physics - Unit 1", year: "2021" },
 ];
 
 export const Education = () => {
@@ -41,7 +66,8 @@ export const Education = () => {
                   src="/images/florida-tech-logo.png"
                   alt=""
                 />
-                <p>Dean's List Fall 2024 & Spring 2025</p>
+                <h3>Dean's List Honors</h3>
+                <p>Fall 2024 & Spring 2025</p>
               </div>
               <div>
                 <img
@@ -50,7 +76,7 @@ export const Education = () => {
                   src="/images/phi-eta-sigma-logo.svg"
                   alt=""
                 />
-                <p>Phi Eta Sigma National Honor Society</p>
+                <h3>Phi Eta Sigma National Honor Society</h3>
                 <p className="abt-club">Inducted Spring 2025</p>
               </div>
               <div>
@@ -60,7 +86,7 @@ export const Education = () => {
                   src="/images/UPE-logo.png"
                   alt=""
                 />
-                <p>Upsilon Pi Epsilon Honor Society</p>
+                <h3>Upsilon Pi Epsilon Honor Society</h3>
                 <p className="abt-club">Inducted Fall 2025</p>
               </div>
               <div>
@@ -70,7 +96,7 @@ export const Education = () => {
                   src="/images/chi-phi-logo.png"
                   alt=""
                 />
-                <p>Chi Phi Fraternity</p>
+                <h3>Chi Phi Fraternity</h3>
                 <p className="abt-club">Initiated Spring 2025</p>
               </div>
             </div>
@@ -107,7 +133,7 @@ export const Education = () => {
                   src="/images/uwi-logo.png"
                   alt=""
                 />
-                <p>Dean's List Fall 2023</p>
+                <h3>Dean's List Fall 2023</h3>
               </div>
             </div>
             <div className="row ig-row">
@@ -128,6 +154,42 @@ export const Education = () => {
           </div>
         </div>
         <div className="timeline-content">
+          <div className="row">
+            <GpaWheel
+                label="SAT Score"
+                value={1550}
+                max={1600}
+                colorClass="gpa-royal"
+              />
+            <div>
+              <img
+                className="logo"
+                style={{ height: "100px", width: "200px" }}
+                src="/images/moe-logo.png"
+                alt=""
+              />
+              <h3>Open Scholarship Recipient 2023</h3>
+            </div>
+            <div>
+              <img
+                className="logo"
+                style={{ height: "100px", width: "150px" }}
+                src="/images/cxc-logo.png"
+                alt=""
+              />
+              <h3>8 CXC Regional Merit List Placements</h3>
+            </div>
+            <div>
+              <img
+                className="logo"
+                style={{ height: "100px", width: "120px" }}
+                src="/images/hvc-logo.png"
+                alt=""
+              />
+              <h3>Extra-curriculars</h3>
+              {/* <p>Astronomy Club, Soccer Team, Environment Club</p> */}
+            </div>
+          </div>
           <div className="row scholarship-row">
             <img
               style={{ height: "200px", width: "600px" }}
@@ -141,8 +203,29 @@ export const Education = () => {
           </div>
           <div className="row merit-list-row">
             {/* Merit List Slideshow Goes Here */}
+            <div className="merit-col">
+              <MeritCarousel items={MERIT_ITEMS} />
+            </div>
+            <div className="merit-desc">
+              <p>This the text that i will use to talk about my 8 merit list placements and other great stuff like that</p>
+            </div>
           </div>
           <div className=""></div>
+          <div className="row astro-row">
+            <div className="abt-club">
+              <p>
+                As the Vice President of the Astronomy Club, I organized and
+                led various stargazing events and educational sessions to
+                promote interest in astronomy among students.
+              </p>
+            </div>
+            <div className="club-media">
+              <img
+                src="/images/astro-club.jpg"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

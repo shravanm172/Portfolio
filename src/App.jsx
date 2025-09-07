@@ -1,6 +1,8 @@
 import './App.css'
 import TopBanner from './components/TopBanner';
 import {Education} from './components/Education';
+import SkillsCerts from './components/SkillsCerts';
+import WorkExperience from './components/WorkExperience';
 
 function App() {
 
@@ -8,6 +10,8 @@ function App() {
     <>
       <TopBanner />
       <Education />
+      <SkillsCerts />
+      <WorkExperience />
     </>
   )
 }

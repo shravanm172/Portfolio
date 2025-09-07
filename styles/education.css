@@ -49,6 +49,7 @@
 .timeline-content {
   margin-top: 2.5rem;
   margin-left: 4rem;
+  margin-right: 10rem;
   display: flex;
   flex-direction: column;
 }
@@ -98,4 +99,118 @@
   align-items: flex-start;
   gap: 4rem;
   margin-top: 3rem;
+  /* padding-left: 5rem; */
+}
+
+/* Merit Carousel */
+.merit-col {
+  min-width: 0;
+  width: 70%;
+} /* lets the carousel shrink without overflow */
+.merit-desc {
+  padding: 1rem 1.25rem;
+}
+.merit-desc .tight {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+}
+.merit-desc .tight li {
+  margin: 0.25rem 0;
+}
+
+.merit-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 8px 0;
+}
+.merit-track {
+  display: flex;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+.merit-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.merit-media {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.merit-media img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover;
+  border-radius: var(--radius); */
+  border: 1px solid #e2e8f0;
+}
+.merit-body h3 {
+  margin: 0.25rem 0 0.5rem;
+}
+.merit-body p {
+  margin: 0;
+}
+.merit-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #c9d4e6;
+  background: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+.merit-nav.prev {
+  left: 0.8rem;
+}
+.merit-nav.next {
+  right: 0.8rem;
+}
+.merit-dots {
+  display: flex;
+  justify-content: center;
+  gap:1.5rem;
+  margin-top: 1rem;
+}
+.merit-dots .dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 0.1rem solid #c9d4e6;
+  background: #fff;
+  padding:0;
+}
+.merit-dots .dot.active {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+/* Responsive */
+/* Mobile: stack */
+@media (max-width: 900px) {
+  .merit-list-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Astronomy Club */
+.astro-row {
+  gap: 10rem !important; 
+}
+
+.club-media {
+  width: 50rem;
+  height: 30rem;
+}
+
+.club-media img {
+  width: 100%;
+  height: 100%;
 }
