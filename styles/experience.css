@@ -1,5 +1,6 @@
 .experience {
-  padding: 3rem 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .section-heading {
@@ -11,35 +12,23 @@
 .experience-list {
   display: flex;
   flex-direction: column;
+  margin-left: 4rem;
+  margin-right: 4rem;
   gap: 3rem;
 }
 
 .experience-item {
-  padding: 1.5rem;
+  padding: 0;
 }
 
 .experience-item h3 {
+  font-size: 2.5rem;
   margin: 0;
 }
 
 .experience-item .muted {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
-}
-
-.project-block {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  align-items: start;
-}
-
-.project-img img {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: var(--shadow);
 }
 
 .project-info h4 {
@@ -54,15 +43,17 @@
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .tag {
-  background: #eef2f7;
+  background: grey;
+  color: white;
   border: 1px solid #d8e0ef;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
 }
 
 /* responsive */
@@ -76,29 +67,181 @@
   }
 }
 
-/* Masonry-style gallery using CSS columns (widely supported) */
-.gallery-masonry {
-  column-count: 2;
-  column-gap: 12px;
+/* --- Image Layout --- */
+.project-block {
+  display: grid;
+  /* gallery column gets a nice wide rail, text flexes */
+  grid-template-columns: minmax(380px, 560px) 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  align-items: start;
 }
+
+/* Let the gallery fill its column (no artificial cap) */
+.project-block .gallery-masonry {
+  width: 100%;
+  max-width: none;
+  margin-top: 0.25rem;
+}
+
+/* Mobile: stack */
+@media (max-width: 768px) {
+  .project-block {
+    grid-template-columns: 1fr;
+  }
+  .project-block .gallery-masonry {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+/* --- Masonry gallery (use column-width so items scale bigger) --- */
+:root {
+  --gallery-gap: 12px;
+  --gallery-radius: 8px;
+  --gallery-border: 1px solid #e5e7eb;
+  --gallery-shadow: var(--shadow);
+}
+
+.gallery-masonry {
+  /* Instead of fixed column-count, set a desired tile width.
+     The browser will auto-fit 2–4 columns based on available space,
+     which makes each image *larger* in a wider container. */
+  column-width: 240px; /* bump to 280px if you want even bigger tiles */
+  column-gap: var(--gallery-gap);
+}
+
 .gallery-item {
   display: inline-block;
   width: 100%;
-  margin: 0 0 12px;
+  margin: 0 0 var(--gallery-gap);
   break-inside: avoid;
-}
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  box-shadow: var(--shadow);
+  border-radius: var(--gallery-radius);
+  overflow: hidden;
+  border: var(--gallery-border);
+  box-shadow: var(--gallery-shadow);
+  background: #fff;
 }
 
-/* Responsive tweaks */
-@media (min-width: 700px) {
-  .gallery-masonry { column-count: 3; }
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.25s ease;
 }
-@media (min-width: 1040px) {
-  .gallery-masonry { column-count: 4; }
+
+.gallery-item:hover img,
+.gallery-item:focus img {
+  transform: scale(1.03);
+}
+
+.gallery-item:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: var(--primary);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item img {
+    transition: none;
+  }
+}
+
+/* --- Projects Section ------------------------------------
+----------------------------------------------------------- */
+/* Inverted (text left, gallery right) */
+.project-block.project-block--reverse {
+  grid-template-columns: 1fr minmax(380px, 560px); /* text column then gallery column */
+}
+
+/* If you ever need to flip order on mobile only (optional) */
+@media (max-width: 768px) {
+  .project-block.project-block--reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* make tiles feel interactive */
+.gallery-item {
+  cursor: zoom-in;
+}
+
+/* -------- Project Gallery Lightbox (scoped) -------- */
+.pg-lb__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.pg-lb__frame {
+  position: relative;
+  width: min(96vw, 1200px);
+  max-height: 90vh;
+}
+
+.pg-lb__img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+  background: #111;
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.5);
+}
+
+.pg-lb__caption {
+  text-align: center;
+  color: #eaeaea;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* controls */
+.pg-lb__close {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 0;
+  background: #fff;
+  color: #111;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.pg-lb__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.pg-lb__prev {
+  left: -0.75rem;
+}
+.pg-lb__next {
+  right: -0.75rem;
+}
+
+@media (max-width: 768px) {
+  .pg-lb__prev,
+  .pg-lb__next {
+    display: none;
+  } /* swipe-friendly on phones */
 }

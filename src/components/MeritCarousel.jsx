@@ -79,7 +79,7 @@ export default function MeritCarousel({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  View announcement
+                  https://www.cxc.org/merit-lists/
                 </a>
               )}
             </div>

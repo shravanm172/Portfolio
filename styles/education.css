@@ -1,10 +1,11 @@
 /* Education Styles
 -------------------------------------------------------------*/
 .education {
-  padding: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
-.timeline-heading {
+h2.section-heading {
   text-align: center;
   font-size: 4rem;
   margin-bottom: 2rem;
@@ -14,6 +15,7 @@
   position: relative;
   margin: 0 auto;
   padding-left: 4rem;
+  padding-right: 4rem;
   border-left: 2px solid #333;
 }
 
@@ -49,7 +51,7 @@
 .timeline-content {
   margin-top: 2.5rem;
   margin-left: 4rem;
-  margin-right: 10rem;
+  margin-right: 4rem;
   display: flex;
   flex-direction: column;
 }
@@ -62,7 +64,14 @@
   margin-bottom: 3rem;
 }
 
-/* Instagram Embed Styles */
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Instagram Embed Styles ----------------*/
 .ig-row {
   display: flex;
   flex-direction: row;
@@ -92,7 +101,7 @@
   margin-top: 3rem;
 }
 
-/* Merit List Styles */
+/* Merit List Styles --------------------------------*/
 .merit-list-row {
   display: flex;
   flex-direction: row;
@@ -104,11 +113,12 @@
 
 /* Merit Carousel */
 .merit-col {
-  min-width: 0;
-  width: 70%;
-} /* lets the carousel shrink without overflow */
+  width: 60%;
+  height: auto;
+}
+
 .merit-desc {
-  padding: 1rem 1.25rem;
+  width: 40%;
 }
 .merit-desc .tight {
   margin: 0.5rem 0 0;
@@ -139,7 +149,7 @@
 
 .merit-media {
   width: 60%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,7 +187,7 @@
 .merit-dots {
   display: flex;
   justify-content: center;
-  gap:1.5rem;
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 .merit-dots .dot {
@@ -186,7 +196,7 @@
   border-radius: 50%;
   border: 0.1rem solid #c9d4e6;
   background: #fff;
-  padding:0;
+  padding: 0;
 }
 .merit-dots .dot.active {
   background: var(--primary);
@@ -202,12 +212,16 @@
 
 /* Astronomy Club */
 .astro-row {
-  gap: 10rem !important; 
+  gap: 10rem !important;
 }
 
 .club-media {
-  width: 50rem;
-  height: 30rem;
+  width: 40%;
+  height: auto;
+}
+
+.abt-club {
+  width: 60%;
 }
 
 .club-media img {

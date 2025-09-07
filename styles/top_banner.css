@@ -27,6 +27,7 @@ section#home > * {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10rem;
 }
 
 .avatar-container {
@@ -61,7 +62,7 @@ section#home > * {
   margin-right: 6rem;
   background-color: black;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
 }
 
 .main-about {

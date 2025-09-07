@@ -6,35 +6,34 @@ const EXPERIENCE = [
   {
     role: "Web Developer (Self-Employed)",
     org: "Startup Business",
-    period: "2023 – Present",
+    period: "June 2024 – Present",
     desc: "Designed and deployed full-stack web solutions for schools and small businesses.",
     projects: [
       {
         title: "El Dorado South Hindu School Website & Database",
         images: [
-          "/images/edshs-calendar.png",
-          "/images/edshs-gallery.png",
-          "/images/edshs-student-records.png",
-          "/images/edshs-dashboard.png",
+          "/images/edshs1.png",
+          "/images/edshs2.png",
+          "/images/edshs3.png",
+          "/images/edshs4.png",
         ],
         details: [
           "Built event calendar with add/edit/delete capabilities for admin users.",
           "Developed photo gallery with category filters and lightbox viewer.",
-          "Created Student Record Management System (React + Flask + PostgreSQL) for storing biodata, grades, guardians, and medical information.",
-          "Implemented role-based access: admin vs public read-only views.",
+          "Created Student Record Management System (React + Flask + PostgreSQL) for storing and manipulating biodata, grades, guardians, and medical information.",
+          "Implemented role-based access with authentication: admin vs public read-only views.",
         ],
         skills: ["React", "Flask", "PostgreSQL", "CSS", "JavaScript"],
       },
       {
         title: "My Place Real Estate Website",
         images: [
-          "/images/edshs-calendar.png",
-          "/images/edshs-gallery.png",
-          "/images/edshs-student-records.png",
-          "/images/edshs-dashboard.png",
+          "/images/myplace1.png",
+          "/images/myplace2.png",
+          "/images/myplace3.png",
         ],
         details: [
-          "Developed property listing site with separate mobile/desktop templates.",
+          "Created property listing site with separate mobile/desktop templates.",
           "Implemented dynamic Flask routes for individual property pages.",
           "Built reusable slideshow and image gallery components.",
         ],
@@ -45,22 +44,23 @@ const EXPERIENCE = [
   {
     role: "Private Tutor",
     org: "Self-Employed",
-    period: "2022 – Present",
-    desc: "Provide one-on-one tutoring in Computer Science, Mathematics, and Physics for high school and early college students.",
+    period: "September 2023 – June 2024",
+    desc: "Provided one-on-one tutoring in Applied Mathematics for high school students at an affordable price.",
     projects: [
       {
-        title: "STEM Tutoring",
+        title: "Shravan's Applied Math Tutoring",
         details: [
-          "Helped students improve grades and exam readiness in CAPE Math, Physics, and ICT.",
-          "Created personalized lesson plans and coding exercises.",
-          "Introduced students to Python basics and problem-solving techniques.",
+          "Helped students improve grades and exam readiness in CAPE Applied Mathematics U1 & U2.",
+          "Created personalized lesson plans and exercises.",
+          "Successfully tutored 6 students, all of whom went on to achieve Grade 1s and 2s in their final exams.",
+          "Deepened my own understanding of statistics, probability, and discrete math.",
         ],
         skills: [
           "Teaching",
           "Communication",
-          "Python",
-          "Mathematics",
-          "Physics",
+          "Statistics",
+          "Probability",
+          "Discrete Math",
         ],
       },
     ],
@@ -69,7 +69,7 @@ const EXPERIENCE = [
 
 export default function WorkExperience() {
   return (
-    <section id="experience" className="experience">
+    <section id="experience" className="experience" data-aos="fade-up">
       <h2 className="section-heading">Work Experience</h2>
       <div className="experience-list">
         {EXPERIENCE.map((exp, idx) => (

@@ -1,7 +1,6 @@
 .skills {
-  padding: 2rem;
-  margin-right: 4rem;
-  margin-left: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .section-heading {
@@ -14,6 +13,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
 .skill-row {
@@ -39,6 +40,94 @@
   margin: 0;
   color: #555;
   line-height: 1.4;
+}
+
+/* Clickable but visually identical thumbnail wrapper */
+.skill-thumb {
+  display: block;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: zoom-in;
+  border-radius: 8px; /* matches your img radius */
+}
+.skill-thumb:focus-visible {
+  outline: 2px solid var(--primary, #6aa9ff);
+  outline-offset: 4px;
+}
+
+/* --- Skills Lightbox (scoped to Skills via 'skills-lb__' prefix) --- */
+.skills-lb__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+.skills-lb__frame {
+  position: relative;
+  width: min(96vw, 1200px);
+  max-height: 90vh;
+}
+.skills-lb__img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+  background: #111;
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.5);
+}
+.skills-lb__caption {
+  text-align: center;
+  color: #eaeaea;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* controls */
+.skills-lb__close {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 0;
+  background: #fff;
+  color: #111;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+.skills-lb__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+.skills-lb__prev {
+  left: -0.75rem;
+}
+.skills-lb__next {
+  right: -0.75rem;
+}
+
+@media (max-width: 768px) {
+  .skills-lb__prev,
+  .skills-lb__next {
+    display: none;
+  } /* thumb to swipe */
 }
 
 /* responsive: stack on mobile */
