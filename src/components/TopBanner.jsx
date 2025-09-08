@@ -19,7 +19,7 @@ export default function TopBanner({
   email = "shravanmaharaj1505@gmail.com",
   socials = {
     github: "https://github.com/shravanm172",
-    linkedin: "www.linkedin.com/in/shravan-maharaj-840057349",
+    linkedin: "https://www.linkedin.com/in/shravan-maharaj-840057349",
   },
   about = "I am a passionate aspiring software engineer from Trinidad & Tobago with robust skills in application and web development and unwavering commitment to learning and growth.",
 }) {
