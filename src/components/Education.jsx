@@ -1,5 +1,5 @@
 import React from "react";
-import GpaWheel from "./GpaWheel";
+import GpaWheel from "./GPAWheel";
 import MeritCarousel from "./MeritCarousel";
 import InstagramEmbed from "./InstagramEmbed";
 import "../../styles/education.css";
