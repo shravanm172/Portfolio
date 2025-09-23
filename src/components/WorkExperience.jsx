@@ -24,6 +24,7 @@ const EXPERIENCE = [
           "Implemented role-based access with authentication: admin vs public read-only views.",
         ],
         skills: ["React", "Flask", "PostgreSQL", "CSS", "JavaScript"],
+        link: "https://www.eldoradosouthhindu.org/",
       },
       {
         title: "My Place Real Estate Website",
@@ -38,6 +39,7 @@ const EXPERIENCE = [
           "Built reusable slideshow and image gallery components.",
         ],
         skills: ["Flask", "HTML", "CSS", "JavaScript", "Bootstrap"],
+        link: "https://www.myplace-realestate.com/desktop_index",
       },
     ],
   },
@@ -104,6 +106,11 @@ export default function WorkExperience() {
                         {s}
                       </span>
                     ))}
+                  </div>
+                  <div className="project-link">
+                    <a href={proj.link} target="_blank" rel="noopener noreferrer">
+                      {proj.link}
+                    </a>
                   </div>
                 </div>
               </div>
