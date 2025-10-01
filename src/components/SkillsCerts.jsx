@@ -1,5 +1,9 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React from "react";
 import "../../styles/skills.css";
+
+// ⬇️ shared lightbox pieces you added
+import { useLightbox } from "./lightbox/useLightbox";
+import LightboxOverlay from "./lightbox/LightboxOverlay";
 
 const SKILLS_CERTS = [
   {
@@ -29,57 +33,31 @@ const SKILLS_CERTS = [
   },
 ];
 
-// --- Lightbox state (Skills-only) ---
-const useSkillsLightbox = (count) => {
-  const [openIdx, setOpenIdx] = useState(null);
-  const isOpen = openIdx !== null;
-
-  const close = useCallback(() => setOpenIdx(null), []);
-  const prev = useCallback(
-    () => setOpenIdx((i) => (i + count - 1) % count),
-    [count]
-  );
-  const next = useCallback(() => setOpenIdx((i) => (i + 1) % count), [count]);
-
-  // ESC / ← / →
-  useEffect(() => {
-    if (!isOpen) return;
-    const onKey = (e) => {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    };
-    document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [isOpen, close, prev, next]);
-
-  return { openIdx, setOpenIdx, isOpen, close, prev, next };
-};
-
 export default function SkillsCerts() {
-  const { openIdx, setOpenIdx, isOpen, close, prev, next } = useSkillsLightbox(
-    SKILLS_CERTS.length
-  );
+  // list of image URLs for the overlay
+  const images = SKILLS_CERTS.map((s) => s.img);
+  const { openIdx, setOpenIdx, close, prev, next } = useLightbox(images.length);
+
   return (
     <section id="skills" className="skills" data-aos="fade-up">
       <h2 className="section-heading">Skills & Certifications</h2>
+
       <div className="skills-list">
         {SKILLS_CERTS.map((item, idx) => (
           <div key={idx} className="skill-row">
             <div className="skill-img">
+              {/* keep your existing layout; just make the image open the lightbox */}
               <button
-                className="skill-thumb" // new class; no conflicts
+                type="button"
+                className="skill-thumb"
                 onClick={() => setOpenIdx(idx)}
                 aria-label={`Open ${item.title}`}
+                style={{ cursor: "zoom-in" }}
               >
                 <img src={item.img} alt={item.title} loading="lazy" />
               </button>
             </div>
+
             <div className="skill-desc">
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
@@ -87,56 +65,15 @@ export default function SkillsCerts() {
           </div>
         ))}
       </div>
-      {isOpen && (
-        <div
-          className="skills-lb__backdrop"
-          onClick={close}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className="skills-lb__frame"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              className="skills-lb__img"
-              src={SKILLS_CERTS[openIdx].img}
-              alt={SKILLS_CERTS[openIdx].title}
-            />
-            <div className="skills-lb__caption">
-              {SKILLS_CERTS[openIdx].title}
-            </div>
 
-            <button
-              className="skills-lb__close"
-              onClick={close}
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <button
-              className="skills-lb__nav skills-lb__prev"
-              onClick={(e) => {
-                e.stopPropagation();
-                prev();
-              }}
-              aria-label="Previous"
-            >
-              ‹
-            </button>
-            <button
-              className="skills-lb__nav skills-lb__next"
-              onClick={(e) => {
-                e.stopPropagation();
-                next();
-              }}
-              aria-label="Next"
-            >
-              ›
-            </button>
-          </div>
-        </div>
-      )}
+      {/* Same overlay UI & behavior as Projects (uses .pg-lb__* classes) */}
+      <LightboxOverlay
+        images={images}
+        openIdx={openIdx}
+        close={close}
+        prev={prev}
+        next={next}
+      />
     </section>
   );
 }
