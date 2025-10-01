@@ -56,9 +56,13 @@ h2.section-heading {
   flex-direction: column;
 }
 
+.timeline-content .column {
+  display:none;
+}
+
 .timeline-content .row {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   gap: 5rem;
   margin-bottom: 3rem;
@@ -71,7 +75,16 @@ h2.section-heading {
   justify-content: flex-start;
 }
 
+img.logo {
+  width: 80px;
+  height: auto;
+}
+
 /* Instagram Embed Styles ----------------*/
+.mobile-ig {
+  display: none;
+}
+
 .ig-row {
   display: flex;
   flex-direction: row;
@@ -99,6 +112,10 @@ h2.section-heading {
   align-items: flex-start;
   gap: 4rem;
   margin-top: 3rem;
+}
+
+.mobile {
+  display: none;
 }
 
 /* Merit List Styles --------------------------------*/
@@ -212,7 +229,7 @@ h2.section-heading {
 
 /* Astronomy Club */
 .astro-row {
-  gap: 10rem !important;
+  gap: 10rem;
 }
 
 .club-media {
@@ -227,4 +244,162 @@ h2.section-heading {
 .club-media img {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .mobile {
+    display: block !important;
+  }
+
+  .timeline-content .row{
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  h2.section-heading {
+    font-size: 2.4rem;
+  }
+
+  .timeline {
+    padding: 0 2rem;
+  }
+
+  .timeline-content {
+    margin: 2rem 0;
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .timeline-content p {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-abt {
+    display: block;
+  }
+
+  .item {
+    width: 9rem;
+  }
+
+  .item h3 {
+    font-size: 1rem;
+  }
+
+  .item p {
+    font-size: 0.8rem;
+  }
+
+  .timeline-desc h3{
+    font-size: 1.6rem;
+  }
+
+  .timeline-desc p{
+    font-size: 1.2rem;
+  }
+
+  img.logo {
+    height: auto;
+    width: 40px;
+  }
+
+  .ig-embed-desktop {
+    display: none !important;
+  }
+
+  .mobile-ig {
+    display: block !important;
+  }
+
+  .ig-card-img {
+    width: 200px;
+    height: auto;
+  }
+
+  .timeline-content.hvc-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-hvc {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .row.merit-list-row {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+
+  .merit-body h3 {
+    font-size: 1.3rem;
+  }
+
+  .merit-col,
+  .merit-desc {
+    width: 100%;
+  }
+
+  /* Center the carousel itself and cap its width */
+  .merit-carousel {
+    width: 100%;
+    max-width: 420px;                 /* adjust: 360–520px works well */
+    margin: 0 auto;                   /* <-- centers */
+    padding-top: 0;
+  }
+
+    /* Make slide media fill the carousel width */
+  .merit-media { width: 100%; }
+  .merit-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Optional: tighten dots spacing on small screens */
+  .merit-dots { 
+    gap: 0.75rem; 
+  }
+
+  .merit-dots .dot {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .abt-club {
+    width: 100%;
+  }
+
+  .row.astro-row {
+    gap: 1rem;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .merit-carousel {
+    max-width: 300px;           
+  }
+
+  .club-media  {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .club-media img {
+    width: 100%;
+    height: 100%;
+  }
 }

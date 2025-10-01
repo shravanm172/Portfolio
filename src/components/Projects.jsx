@@ -47,7 +47,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div style={{ marginTop: "0.75rem" }}>
+                <div className="project-link">
                   <a
                     className="btn btn-secondary"
                     href={p.repo}

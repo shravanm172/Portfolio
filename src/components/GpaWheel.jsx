@@ -1,31 +1,53 @@
 // src/components/GpaWheel.jsx
-import React, {
-  useMemo,
-  useRef,
-  useEffect,
-  useState,
-  useId
-} from "react";
+import React, { useMemo, useRef, useEffect, useState, useId } from "react";
 import "../../styles/gpa_wheel.css";
+
+/* tiny local hook so you don't need another file */
+function useMediaQuery(query) {
+  const get = () =>
+    typeof window !== "undefined" ? window.matchMedia(query).matches : false;
+
+  const [matches, setMatches] = useState(get);
+
+  useEffect(() => {
+    const mql = window.matchMedia(query);
+    const onChange = (e) => setMatches(e.matches);
+    // sync and subscribe
+    setMatches(mql.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, [query]);
+
+  return matches;
+}
 
 export default function GpaWheel({
   label = "Cumulative GPA",
   value = 3.9,
   max = 4.0,
-  size = 140,       // px
-  stroke = 12,      // ring thickness
+
+  // ✅ responsive sizes
+  sizeMobile = 120,          // px for mobile
+  sizeDesktop = 180,         // px for desktop
+  breakpoint = "(min-width: 900px)",
+
+  stroke = 12,
   decimals = 2,
   colorClass = "gpa-accent",
   animateOnView = true,
   animateOnce = true,
-  durationMs = 900, // consistent name
+  durationMs = 900,
 }) {
   const rootRef = useRef(null);
   const [inView, setInView] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
-  const id = useId(); // unique per instance (for gradient)
+  const id = useId();
 
-  // Observe when the wheel enters the viewport
+  // pick size based on media query
+  const isDesktop = useMediaQuery(breakpoint);
+  const size = isDesktop ? sizeDesktop : sizeMobile;
+
+  // Observe viewport entry for animation
   useEffect(() => {
     const el = rootRef.current;
     if (!el) return;
@@ -51,14 +73,11 @@ export default function GpaWheel({
 
   const radius = useMemo(() => (size - stroke) / 2, [size, stroke]);
   const circumference = useMemo(() => 2 * Math.PI * radius, [radius]);
-
-  // animate the ring with livePct
   const dashOffset = useMemo(
     () => circumference * (1 - livePct / 100),
     [circumference, livePct]
   );
 
-  // endcap follows the animated tip
   const angle = useMemo(
     () => Math.PI * 2 * (livePct / 100) - Math.PI / 2,
     [livePct]
@@ -76,13 +95,18 @@ export default function GpaWheel({
     <figure
       ref={rootRef}
       className={`gpa-wheel ${colorClass}`}
-      style={{ width: size, height: size, "--gpa-duration": `${durationMs}ms` }}
+      style={{
+        width: size,        // concrete pixels so the SVG never collapses
+        height: size,
+        "--gpa-duration": `${durationMs}ms`,
+      }}
     >
       <svg
         className="gpa-svg"
         width={size}
         height={size}
         viewBox={`0 0 ${size} ${size}`}
+        preserveAspectRatio="xMidYMid meet"
         role="img"
         aria-label={`${label}: ${clamped.toFixed(decimals)} out of ${max}`}
       >
@@ -103,7 +127,7 @@ export default function GpaWheel({
           fill="none"
         />
 
-        {/* Progress ring (starts at top due to rotation) */}
+        {/* Progress */}
         <circle
           className="gpa-progress"
           cx={size / 2}
@@ -117,7 +141,7 @@ export default function GpaWheel({
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
         />
 
-        {/* Animated endcap (only when > 0%) */}
+        {/* Endcap */}
         {livePct > 0 && (
           <circle className="gpa-endcap" r={stroke / 2} cx={endcapX} cy={endcapY} />
         )}

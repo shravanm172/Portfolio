@@ -59,41 +59,44 @@ export const Education = () => {
                 value={3.9}
                 max={4.0}
                 colorClass="gpa-green"
+                sizeMobile={110}   // 👈 mobile
+                sizeDesktop={180}  // 👈 desktop
+                stroke={14}
               />
-              <div>
+              <div className="item">
                 <img
                   className="logo"
-                  style={{ height: "80px", width: "80px" }}
+                  // style={{ height: "80px", width: "80px" }}
                   src="/images/florida-tech-logo.png"
                   alt=""
                 />
                 <h3>Dean's List Honors</h3>
                 <p>Fall 2024 & Spring 2025</p>
               </div>
-              <div>
+              <div className="item">
                 <img
                   className="logo"
-                  style={{ height: "100px", width: "80px" }}
+                  // style={{ height: "100px", width: "80px" }}
                   src="/images/phi-eta-sigma-logo.svg"
                   alt=""
                 />
                 <h3>Phi Eta Sigma National Honor Society</h3>
                 <p className="abt-club">Inducted Spring 2025</p>
               </div>
-              <div>
+              <div className="item">
                 <img
                   className="logo"
-                  style={{ height: "100px", width: "80px" }}
+                  // style={{ height: "100px", width: "80px" }}
                   src="/images/UPE-logo.png"
                   alt=""
                 />
                 <h3>Upsilon Pi Epsilon Honor Society</h3>
                 <p className="abt-club">Inducted Fall 2025</p>
               </div>
-              <div>
+              <div className="item">
                 <img
                   className="logo"
-                  style={{ height: "100px", width: "100px" }}
+                  // style={{ height: "100px", width: "100px" }}
                   src="/images/chi-phi-logo.png"
                   alt=""
                 />
@@ -102,7 +105,21 @@ export const Education = () => {
               </div>
             </div>
             <div className="row ig-row">
-              <InstagramEmbed url="https://www.instagram.com/p/DFszQKkpsOf/" />
+              <div className="mobile-ig">
+                <a
+                  className="ig-card"
+                  href="https://www.instagram.com/p/DFszQKkpsOf/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View on Instagram"
+                >
+                  <img className="ig-card-img" src="/images/gift-of-life.PNG" alt="" loading="lazy" />
+                  <div className="ig-card-cta">View on Instagram ↗</div>
+                </a>
+              </div>
+              <div className="ig-embed-desktop">
+                <InstagramEmbed url="https://www.instagram.com/p/DFszQKkpsOf/" />
+              </div>
               <p className="timeline-abt">
                 At the Florida Institute of Technology, one of Florida’s premier
                 STEM universities, I embarked on a new chapter both academically
@@ -163,10 +180,10 @@ export const Education = () => {
                 max={4.3}
                 colorClass="gpa-green"
               />
-              <div>
+              <div className="item">
                 <img
                   className="logo"
-                  style={{ height: "100px", width: "200px" }}
+                  // style={{ height: "100px", width: "200px" }}
                   src="/images/uwi-logo.png"
                   alt=""
                 />
@@ -175,7 +192,21 @@ export const Education = () => {
               </div>
             </div>
             <div className="row ig-row">
-              <InstagramEmbed url="https://www.instagram.com/p/CxwKEnlyQOC/" />
+              <div className="mobile-ig">
+                <a
+                  className="ig-card"
+                  href="https://www.instagram.com/p/CxwKEnlyQOC/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View on Instagram"
+                >
+                  <img className="ig-card-img" src="/images/matriculant-ig.png" alt="" loading="lazy" />
+                  <div className="ig-card-cta">View on Instagram ↗</div>
+                </a>
+              </div>
+              <div className="ig-embed-desktop">
+                <InstagramEmbed url="https://www.instagram.com/p/CxwKEnlyQOC/" />
+              </div>
               <p className="timeline-abt">
                 After graduating secondary school in May 2023, I began my
                 tertiary journey at the University of the West Indies (UWI), the
@@ -214,69 +245,66 @@ export const Education = () => {
             <p>September 2016 - May 2023</p>
           </div>
         </div>
-        <div className="timeline-content">
-          <div className="row">
-            <GpaWheel
-              label="SAT Score"
-              value={1550}
-              max={1600}
-              colorClass="gpa-royal"
-            />
-            <div>
-              <img
-                className="logo"
-                style={{ height: "100px", width: "200px" }}
-                src="/images/moe-logo.png"
-                alt=""
+        <div className="timeline-content hvc-content">
+          <div className="mobile-hvc">
+              <div className="row">
+              <GpaWheel
+                label="SAT Score"
+                value={1550}
+                max={1600}
+                colorClass="gpa-royal"
               />
-              <h3>Open Scholarship Recipient 2023</h3>
+              <div className="item">
+                <img
+                  className="logo"
+                  // style={{ height: "100px", width: "200px" }}
+                  src="/images/moe-logo.png"
+                  alt=""
+                />
+                <h3>Open Scholarship Recipient 2023</h3>
+              </div>
+              <div className="item">
+                <img
+                  className="logo"
+                  // style={{ height: "100px", width: "150px" }}
+                  src="/images/cxc-logo.png"
+                  alt=""
+                />
+                <h3>8 CXC Regional Merit List Placements</h3>
+              </div>
+              <div className="item">
+                <img
+                  className="logo"
+                  // style={{ height: "100px", width: "120px" }}
+                  src="/images/hvc-logo.png"
+                  alt=""
+                />
+                <h3>Extra-curriculars</h3>
+                {/* <p>Astronomy Club, Soccer Team, Environment Club</p> */}
+              </div>
             </div>
-            <div>
-              <img
-                className="logo"
-                style={{ height: "100px", width: "150px" }}
-                src="/images/cxc-logo.png"
-                alt=""
-              />
-              <h3>8 CXC Regional Merit List Placements</h3>
+            <div className="row scholarship-row">
+              <h4>Open Scholarship Recipient 2023</h4>
+              <a href="https://storage.moe.gov.tt/wpdevelopment/2023/12/Media-Release-Scholarships-awarded-for-2023-CAPE-2.pdf">
+                Ministry of Education TT || Scholarship Recipients Media Release
+                2023
+              </a>
+              <p>
+                In 2023, the Ministry of Education TT awarded 45 open scholarships
+                to the top-performing students nationally in the CAPE 2022/23
+                examinations, including 5 in the Communications and Information
+                Technology Studies category. It is a highly competitive and
+                prestigious honor that recognizes outstanding academic achievement
+                in my field. I was privileged to be one of these few recipients,
+                earning a full-ride scholarship that covers my tuition at any
+                accredited university worldwide. This enabled me to pursue my
+                undergraduate studies in Computer Science at Florida Institute of
+                Technology.
+              </p>
             </div>
-            <div>
-              <img
-                className="logo"
-                style={{ height: "100px", width: "120px" }}
-                src="/images/hvc-logo.png"
-                alt=""
-              />
-              <h3>Extra-curriculars</h3>
-              {/* <p>Astronomy Club, Soccer Team, Environment Club</p> */}
-            </div>
-          </div>
-          <div className="row scholarship-row">
-            {/* <img
-              style={{ height: "200px", width: "600px" }}
-              src="/images/scholarship.png"
-              alt=""
-            /> */}
-            <h4>Open Scholarship Recipient 2023</h4>
-            <a href="https://storage.moe.gov.tt/wpdevelopment/2023/12/Media-Release-Scholarships-awarded-for-2023-CAPE-2.pdf">
-              Ministry of Education TT || Scholarship Recipients Media Release
-              2023
-            </a>
-            <p>
-              In 2023, the Ministry of Education TT awarded 45 open scholarships
-              to the top-performing students nationally in the CAPE 2022/23
-              examinations, including 5 in the Communications and Information
-              Technology Studies category. It is a highly competitive and
-              prestigious honor that recognizes outstanding academic achievement
-              in my field. I was privileged to be one of these few recipients,
-              earning a full-ride scholarship that covers my tuition at any
-              accredited university worldwide. This enabled me to pursue my
-              undergraduate studies in Computer Science at Florida Institute of
-              Technology.
-            </p>
           </div>
           <div className="row merit-list-row">
-            {/* Merit List Slideshow Goes Here */}
+            {/* Merit List Slideshow */}
             <div className="merit-desc">
               <p>
                 The CXC regional merit list is the pinnacle of academic prestige
@@ -304,7 +332,6 @@ export const Education = () => {
               <MeritCarousel items={MERIT_ITEMS} />
             </div>
           </div>
-          <div className=""></div>
           <div className="row astro-row">
             <div className="club-media">
               <img src="/images/astro-club.jpg" alt="" />

@@ -1,22 +1,35 @@
 /* src/styles/gpaWheel.css */
 /* GPA wheel styles */
 .gpa-wheel {
+  inline-size: var(--gpa-size, 160px); /* fluid width */
+  aspect-ratio: 1 / 1;                 /* keep it a square */
   display: grid;
   place-items: center;
   gap: 0.35rem;
   margin: 0;
   position: relative;
+
   --track: #e6e8ee;
   --text: #111827;
   --value: #111827;
-  --grad-start: #6366f1; /* default gradient start */
-  --grad-end: #22c55e; /* default gradient end */
+  --grad-start: #6366f1;
+  --grad-end: #22c55e;
   --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   filter: drop-shadow(var(--shadow));
 }
 
 .gpa-svg {
   display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* GPA wheel on dark cards */
+.timeline .gpa-wheel {
+  inline-size: clamp(160px, 26vw, 220px); /* bigger floor/ceiling */
+  --track: rgba(255,255,255,0.18);        /* visible on dark */
+  --grad-start: #7dd3fc;                  /* light cyan → green */
+  --grad-end:   #22c55e;
 }
 
 .gpa-track {
@@ -37,6 +50,7 @@
               cy var(--gpa-duration, 900ms) ease;
 }
 
+
 .gpa-caption {
   position: absolute;
   inset: 0;
@@ -52,6 +66,16 @@
   font-size: 1.4rem;
   opacity: 0.8;
   translate: 0 -12px;
+}
+
+.gpa-caption span:first-child {
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem); /* scales with size */
+  font-weight: 600;
+}
+.gpa-caption span:last-child {
+  font-size: clamp(1.0rem, 1.2vw, 1.3rem);
+  opacity: 0.8;
+  margin-top: 0.15rem;
 }
 
 /* Animate only the properties we change */

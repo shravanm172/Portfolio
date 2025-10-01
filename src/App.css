@@ -4,6 +4,14 @@
 /* Homepage styles
 ---------------------------------------------------------------------*/
 
+/*Color Palette*/
+:root {
+  --color-charcoal: #2F4550;
+  --color-grey: #586F7C;
+  --color-light-blue: #B8DBD9;
+  --color-white: #F4F4F9;
+}
+
 *,
 html,
 body {
@@ -20,6 +28,8 @@ body {
 body,
 html {
   font-size: 62.5%; /* 1rem = 10px */
+  width:100vw;
+  max-width:100vw;
 }
 
 
@@ -115,11 +125,32 @@ section[id] { scroll-margin-top: var(--nav-h); }
 }
 
 /* Responsive */
-@media (max-width: 720px){
+@media (max-width: 768px){
   .footer-wrap{
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
   }
+
   .contact-list{
     grid-template-columns: 1fr;   /* stack on mobile */
   }
+
+  section {
+    margin-top: 3rem;
+  }
+
+  .container.footer-bottom{
+    text-align: center;
+  }
+
+  .footer-bottom small {
+    font-size: 1rem;
+  }
+  
+  .site-footer{
+    padding: 0 3rem;
+  }
+
 }

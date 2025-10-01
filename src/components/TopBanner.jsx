@@ -43,9 +43,9 @@ export default function TopBanner({
         </nav>
 
         <div className="main-banner-content">
-          <div className="avatar-container">
+          {/* <div className="avatar-container">
             <img src={avatarUrl} alt={name} className="avatar" />
-          </div>
+          </div> */}
           <h1>{name}</h1>
           <h2>BS Computer Science || Sophomore</h2>
           <h3>{email}</h3>
