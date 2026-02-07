@@ -58,9 +58,6 @@
 
 /* responsive */
 @media (max-width: 768px) {
-  .project-block {
-    grid-template-columns: 1fr;
-  }
   .project-img {
     max-width: 300px;
     margin: 0 auto;
@@ -68,33 +65,47 @@
 }
 
 /* --- Image Layout --- */
+/* CHANGED: grid -> flex (stable regardless of # of images) */
 .project-block {
-  display: grid;
-  /* gallery column gets a nice wide rail, text flexes */
-  grid-template-columns: minmax(380px, 560px) 1fr;
-  gap: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5rem;
   margin-top: 2rem;
   margin-bottom: 3rem;
-  align-items: start;
 }
 
-/* Let the gallery fill its column (no artificial cap) */
+/* CHANGED: give gallery a consistent “rail” width */
 .project-block .gallery-masonry {
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gallery-gap);
+  align-items: flex-start;
+
+  flex: 0 0 clamp(380px, 42vw, 560px); /* rail width */
   max-width: none;
   margin-top: 0.25rem;
 }
 
-/* Mobile: stack items vertically */
+/* CHANGED: ensure the text column behaves nicely (no overflow weirdness) */
+.project-block .project-info {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Mobile: stack items vertically (1-up) */
 @media (max-width: 768px) {
   .project-block {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
+
   .project-block .gallery-masonry {
+    flex: none;
+    width: 100%;
     max-width: 640px;
     margin: 0 auto;
   }
-  
+
   .gallery-item {
     flex: 0 0 100%; /* On mobile, take full width */
     max-width: 100%;
@@ -110,7 +121,7 @@
 }
 
 .gallery-masonry {
-  /* Use flexbox for simple side-by-side layout with wrapping */
+  /* Base styles - specific rules in .project-block .gallery-masonry */
   display: flex;
   flex-wrap: wrap;
   gap: var(--gallery-gap);
@@ -118,9 +129,10 @@
 }
 
 .gallery-item {
-  /* Smaller, fixed-width items that don't grow */
-  flex: 0 0 220px; /* don't grow, don't shrink, base width of 220px */
-  max-width: 220px; /* cap the maximum width */
+  /* Each tile is 50% minus half the gap -> consistent 2-up */
+  flex: 0 0 calc((100% - var(--gallery-gap)) / 2);
+  max-width: calc((100% - var(--gallery-gap)) / 2);
+
   border-radius: var(--gallery-radius);
   overflow: hidden;
   border: var(--gallery-border);
@@ -155,15 +167,15 @@
 
 /* --- Projects Section ------------------------------------
 ----------------------------------------------------------- */
-/* Inverted (text left, gallery right) */
+/* CHANGED: reverse now uses flex-direction instead of grid columns */
 .project-block.project-block--reverse {
-  grid-template-columns: 1fr minmax(380px, 560px); /* text column then gallery column */
+  flex-direction: row-reverse;
 }
 
-/* If you ever need to flip order on mobile only (optional) */
+/* keep your existing mobile behavior (already stacks) */
 @media (max-width: 768px) {
   .project-block.project-block--reverse {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
@@ -185,12 +197,14 @@
   display: grid;
   place-items: center;
   padding: var(--lb-pad);
-  overscroll-behavior: contain;   /* stop scroll chaining behind the modal */
-  touch-action: pan-y;            /* allow vertical scroll on tall images */
+  overscroll-behavior: contain; /* stop scroll chaining behind the modal */
+  touch-action: pan-y; /* allow vertical scroll on tall images */
 }
 
 @supports (height: 100dvh) {
-  .pg-lb__backdrop { min-height: 100dvh; } /* iOS URL bar friendly */
+  .pg-lb__backdrop {
+    min-height: 100dvh;
+  } /* iOS URL bar friendly */
 }
 
 .pg-lb__frame {
@@ -205,7 +219,9 @@
 .pg-lb__img {
   display: block;
   max-width: 100%;
-  max-height: calc(100vh - 2 * var(--lb-pad) - 48px); /* leave room for caption */
+  max-height: calc(
+    100vh - 2 * var(--lb-pad) - 48px
+  ); /* leave room for caption */
   width: auto;
   height: auto;
   object-fit: contain;
@@ -252,11 +268,15 @@
   color: #111;
   font-size: 1.6rem;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
-.pg-lb__prev { left: max(8px, env(safe-area-inset-left)); }
-.pg-lb__next { right: max(8px, env(safe-area-inset-right)); }
+.pg-lb__prev {
+  left: max(8px, env(safe-area-inset-left));
+}
+.pg-lb__next {
+  right: max(8px, env(safe-area-inset-right));
+}
 
 @media (max-width: 768px) {
   .pg-lb__prev,
@@ -293,6 +313,10 @@
   }
 
   /* Mobile gallery styles are handled by the main responsive rules above */
+
+  .project-block {
+    gap: 2rem;
+  }
 
   .project-info h4 {
     font-size: 1.5rem;
