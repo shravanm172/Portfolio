@@ -105,7 +105,7 @@ export const Education = () => {
                 <p className="abt-club">Initiated Spring 2025</p>
               </div>
             </div>
-            <div className="row ig-row">
+            <div className="row ig-row float-wrap">
               <div className="mobile-ig">
                 <a
                   className="ig-card"
@@ -197,7 +197,7 @@ export const Education = () => {
                 {/* <p className="abt-club">Dean's List Honors -Fall 2023</p> */}
               </div>
             </div>
-            <div className="row ig-row">
+            <div className="row ig-row float-wrap">
               <div className="mobile-ig">
                 <a
                   className="ig-card"
@@ -314,8 +314,19 @@ export const Education = () => {
               </p>
             </div>
           </div>
-          <div className="row merit-list-row">
+          <div className="row merit-list-row float-wrap">
             {/* Merit List Slideshow */}
+            <div className="merit-col">
+              <EmblaMeritCarousel
+                items={MERIT_ITEMS}
+                options={{
+                  loop: false,
+                  align: "start",
+                  dragFree: true,
+                  containScroll: "trimSnaps",
+                }}
+              />
+            </div>
             <div className="merit-desc">
               <p>
                 The CXC regional merit list is the pinnacle of academic prestige
@@ -346,19 +357,8 @@ export const Education = () => {
                 subjects.
               </p>
             </div>
-            <div className="merit-col">
-              <EmblaMeritCarousel
-                items={MERIT_ITEMS}
-                options={{
-                  loop: false,
-                  align: "start",
-                  dragFree: true,
-                  containScroll: "trimSnaps",
-                }}
-              />
-            </div>
           </div>
-          <div className="row astro-row">
+          <div className="row astro-row float-wrap">
             <div className="club-media">
               <img src="/images/astro-club.jpg" alt="" />
             </div>

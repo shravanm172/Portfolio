@@ -1,3 +1,7 @@
+.row.float-wrap {
+  padding-right: 4rem; /* same value as timeline-content margin */
+}
+
 /* Education Styles
 -------------------------------------------------------------*/
 .education {
@@ -17,10 +21,6 @@ h2.section-heading {
   padding-left: 4rem;
   padding-right: 0;
   border-left: 2px solid #333;
-}
-
-.timeline-content {
-  margin-right: 0;
 }
 
 .timeline-item {
@@ -61,7 +61,7 @@ h2.section-heading {
 }
 
 .timeline-content .column {
-  display:none;
+  display: none;
 }
 
 .timeline-content .row {
@@ -84,7 +84,6 @@ img.logo {
   height: auto;
 }
 
-/* Instagram Embed Styles ----------------*/
 .mobile-ig {
   display: none;
 }
@@ -122,6 +121,35 @@ img.logo {
   display: none;
 }
 
+/* ======= UWI Row Styles ======= */
+
+/* ========== UWI row: float IG embed around text (desktop only) ========== */
+
+.row.ig-row.float-wrap {
+  display: block !important; /* kill flex so text can wrap */
+}
+
+/* Float the desktop embed so text wraps beside + under */
+.row.ig-row.float-wrap .ig-embed-desktop {
+  float: right;
+  width: clamp(260px, 32vw, 420px);
+  margin: 0 0 1.2rem 2.5rem;
+}
+
+/* Make the embed respect the float width */
+.row.ig-row.float-wrap .ig-embed-desktop .instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Clearfix */
+.row.ig-row.float-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* Merit List Styles --------------------------------*/
 .merit-list-row {
   display: flex;
@@ -134,14 +162,11 @@ img.logo {
 
 /* Merit Carousel */
 .merit-col {
-  width: 60%;
+  /* width: 60%; */
   height: auto;
   overflow: hidden;
 }
 
-.merit-desc {
-  width: 40%;
-}
 .merit-desc .tight {
   margin: 0.5rem 0 0;
   padding-left: 1.1rem;
@@ -218,31 +243,80 @@ img.logo {
   background: var(--primary);
   border-color: var(--primary);
 }
-/* Responsive */
-/* Mobile: stack */
-@media (max-width: 900px) {
-  .merit-list-row {
-    grid-template-columns: 1fr;
+
+/* ========== Merit row: float-wrap (text wraps under carousel) ========== */
+
+.row.merit-list-row.float-wrap {
+  display: block !important; /* kill flex so text can wrap */
+}
+
+/* Float the carousel column (RIGHT side) */
+.row.merit-list-row.float-wrap .merit-col {
+  float: right;
+  width: clamp(260px, 42vw, 520px); /* responsive carousel width */
+  margin: 0 0 1.2rem 2.5rem; /* gap between text and carousel */
+}
+
+/* Let text be normal flow (no fixed width) */
+.row.merit-list-row.float-wrap .merit-desc {
+  width: auto !important;
+}
+
+/* Clearfix */
+.row.merit-list-row.float-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Optional: keep carousel from touching edges internally */
+.row.merit-list-row.float-wrap .merit-carousel {
+  width: 100%;
+}
+
+/* Mobile: stack (no float) */
+@media (max-width: 768px) {
+  .row.merit-list-row.float-wrap .merit-col {
+    float: none;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 1rem;
   }
 }
 
-/* Astronomy Club */
+/* ==========Astronomy Club Row================ */
 .astro-row {
   gap: 10rem;
 }
 
-.club-media {
-  width: 40%;
+.row.astro-row.float-wrap {
+  display: block !important; /* kill flex so text can wrap */
+}
+
+.row.astro-row.float-wrap .club-media {
+  float: left;
+  width: clamp(220px, 35vw, 420px); /* responsive “image column” */
+  margin: 0 2.5rem 1.2rem 0; /* space between image + text */
   height: auto;
 }
 
-.abt-club {
-  width: 60%;
-}
-
-.club-media img {
+.row.astro-row.float-wrap .club-media img {
   width: 100%;
   height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* text container should NOT have a fixed width */
+.row.astro-row.float-wrap .abt-club {
+  width: auto !important;
+}
+
+/* clearfix so the row contains the float */
+.row.astro-row.float-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 @media (max-width: 768px) {
@@ -256,7 +330,7 @@ img.logo {
     display: block !important;
   }
 
-  .timeline-content .row{
+  .timeline-content .row {
     gap: 2rem;
     justify-content: center;
   }
@@ -271,7 +345,7 @@ img.logo {
 
   .timeline-content {
     margin: 2rem 0;
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 1rem;
@@ -280,7 +354,7 @@ img.logo {
   .timeline-content p {
     font-size: 1.2rem;
   }
-  
+
   .timeline-abt {
     display: block;
   }
@@ -297,11 +371,11 @@ img.logo {
     font-size: 0.8rem;
   }
 
-  .timeline-desc h3{
+  .timeline-desc h3 {
     font-size: 1.6rem;
   }
 
-  .timeline-desc p{
+  .timeline-desc p {
     font-size: 1.2rem;
   }
 
@@ -352,13 +426,15 @@ img.logo {
   /* Center the carousel itself and cap its width */
   .merit-carousel {
     width: 100%;
-    max-width: 420px;                 /* adjust: 360–520px works well */
-    margin: 0 auto;                   /* <-- centers */
+    max-width: 420px; /* adjust: 360–520px works well */
+    margin: 0 auto; /* <-- centers */
     padding-top: 0;
   }
 
-    /* Make slide media fill the carousel width */
-  .merit-media { width: 100%; }
+  /* Make slide media fill the carousel width */
+  .merit-media {
+    width: 100%;
+  }
   .merit-media img {
     width: 100%;
     height: auto;
@@ -366,13 +442,12 @@ img.logo {
   }
 
   /* Optional: tighten dots spacing on small screens */
-  .merit-dots { 
-    gap: 0.75rem; 
+  .merit-dots {
+    gap: 0.75rem;
   }
 
-
   .merit-body h3 {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .merit-body a {
@@ -387,15 +462,20 @@ img.logo {
     gap: 1rem;
   }
 
-
+  .row.astro-row.float-wrap .club-media {
+    float: none;
+    width: 100%;
+    max-width: 420px; /* optional */
+    margin: 0 auto 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .merit-carousel {
-    max-width: 300px;           
+    max-width: 300px;
   }
 
-  .club-media  {
+  .club-media {
     width: 100%;
     max-width: 300px;
     height: auto;

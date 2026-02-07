@@ -1,6 +1,6 @@
 .embla--merit {
   width: 100%;
-  max-width: min(1100px, 100vw);
+  /* max-width: min(1100px, 100vw); */
   margin: 0 auto;
   overflow: hidden;
 }
@@ -19,23 +19,25 @@
 }
 
 .embla--certificates .embla__slide {
-    flex: 0 0 30%;
+  flex: 0 0 30%;
 }
 
-@media (max-width: 768px){
- .embla--certificates .muted {
+@media (max-width: 768px) {
+  .embla--certificates .muted {
     font-size: 1rem;
   }
-  .embla--merit .embla__slide, .embla--certificates .embla__slide {
+  .embla--merit .embla__slide,
+  .embla--certificates .embla__slide {
     flex: 0 0 40%;
   }
   .embla__dot {
-        display: none;
-    }
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
-  .embla--certificates .embla__slide, .embla--merit .embla__slide {
+  .embla--certificates .embla__slide,
+  .embla--merit .embla__slide {
     flex: 0 0 70%;
   }
 }
@@ -74,7 +76,7 @@
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   font-size: 22px;
   line-height: 0;
@@ -128,9 +130,3 @@
   color: #6b7280;
   font-weight: 500;
 }
-
-
-
-
-
-
