@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 
-
 const Portal = ({ children }) =>
-  typeof document === "undefined" ? null : createPortal(children, document.body);
+  typeof document === "undefined"
+    ? null
+    : createPortal(children, document.body);
 
 const useProjectLightbox = (count) => {
   const [openIdx, setOpenIdx] = useState(null);
@@ -12,7 +13,7 @@ const useProjectLightbox = (count) => {
   const close = useCallback(() => setOpenIdx(null), []);
   const prev = useCallback(
     () => setOpenIdx((i) => (i + count - 1) % count),
-    [count]
+    [count],
   );
   const next = useCallback(() => setOpenIdx((i) => (i + 1) % count), [count]);
 
@@ -36,11 +37,11 @@ const useProjectLightbox = (count) => {
 };
 
 export default function ProjectGallery({ images = [] }) {
-  if (!images.length) return null;
-
   const { openIdx, setOpenIdx, isOpen, close, prev, next } = useProjectLightbox(
-    images.length
+    images.length,
   );
+
+  if (!images.length) return null;
 
   return (
     <>
@@ -77,7 +78,11 @@ export default function ProjectGallery({ images = [] }) {
               />
               <div className="pg-lb__caption">Screenshot {openIdx + 1}</div>
 
-              <button className="pg-lb__close" onClick={close} aria-label="Close">
+              <button
+                className="pg-lb__close"
+                onClick={close}
+                aria-label="Close"
+              >
                 ×
               </button>
 

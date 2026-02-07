@@ -7,6 +7,7 @@ import SkillsCerts from "./components/SkillsCerts";
 import WorkExperience from "./components/WorkExperience";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import ResumeToast from "./components/ResumeToast";
 
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -26,12 +27,13 @@ export default function App() {
 
   return (
     <>
-      <TopBanner />      
+      <TopBanner />
       <Education />
       <SkillsCerts />
       <WorkExperience />
       <Projects />
       <Footer />
+      <ResumeToast />
     </>
   );
 }

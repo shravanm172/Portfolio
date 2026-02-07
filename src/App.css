@@ -1,17 +1,103 @@
-/*Default Vite + React CSS
----------------------------------------------------------------------*/
-
-/* Homepage styles
----------------------------------------------------------------------*/
-
-/*Color Palette*/
+/*=================Font Stack================*/
 :root {
-  --color-charcoal: #2F4550;
-  --color-grey: #586F7C;
-  --color-light-blue: #B8DBD9;
-  --color-white: #F4F4F9;
+  /* Primary Fonts */
+  --font-heading: 'Caveat', cursive;
+  --font-body: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono:   "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   
+  /* System Font Stacks */
+  --font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-system-serif: 'Times New Roman', Times, serif;
+  --font-system-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  /* Specialized Font Stacks */
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Caveat', 'Dancing Script', cursive;
 }
+
+/*=================================Color Palette========================*/
+:root {
+  /* Core backgrounds */
+  --bg-main: black;        /* VS Code editor background */
+  --bg-panel: #252526;       /* Panels / cards */
+  --bg-elevated: #2d2d2d;    /* Hover / raised surfaces */
+
+  /* Borders & dividers */
+  --border-subtle: #3c3c3c;
+  --border-muted: #2a2a2a;
+
+  /* Text */
+  --text-primary: #d4d4d4;   /* Main editor text */
+  --text-muted: #9aa0a6;     /* Comments / secondary */
+  --text-faint: #6a6a6a;     /* Line numbers, hints */
+
+  /* Syntax colors (Dark+) */
+  --syntax-keyword: #569cd6; /* const, let, class */
+  --syntax-string: #ce9178;  /* "strings" */
+  --syntax-function: #dcdcaa;/* functions, identifiers */
+  --syntax-variable: #9cdcfe;/* object properties */
+  --syntax-type: #4ec9b0;    /* classes, types */
+  --syntax-comment: #6a9955; /* comments */
+  --syntax-number: #b5cea8;  /* numbers */
+  --syntax-error: #f44747;   /* errors */
+
+  /* Accent / UI */
+  --accent-blue: #007acc;    /* VS Code blue */
+  --accent-green: #22c55e;   /* success / highlights */
+
+  /* Effects */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.45);
+
+  .kw { color: var(--syntax-keyword); }
+  .str { color: var(--syntax-string); }
+  .fn { color: var(--syntax-function); }
+  .var { color: var(--syntax-variable); }
+  .type { color: var(--syntax-type); }
+  .com { color: var(--syntax-comment); }
+  .num { color: var(--syntax-number); }
+  .err { color: var(--syntax-error); }
+
+  .ln {
+    color: var(--text-faint);
+    user-select: none;
+  }
+}
+/*======================================================================*/
+/*=============Typography==========*/
+.code-paragraph {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.95rem;
+  line-height: 1.65;
+
+  box-shadow: var(--shadow-soft);
+  overflow-x: auto;
+}
+
+.code-paragraph p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+.code-line {
+  display: flex;
+}
+
+.code-line + .code-line {
+  margin-top: 0.35rem;
+}
+
+.code-line .ln {
+  width: 2.5ch;
+  margin-right: 1rem;
+  text-align: right;
+}
+/*================================*/
 
 *,
 html,
@@ -31,6 +117,7 @@ html {
   font-size: 62.5%; /* 1rem = 10px */
   width:100vw;
   max-width:100vw;
+  background-color: var(--bg-main);
 }
 
 
@@ -38,11 +125,9 @@ html {
 /* Global smooth scroll */
 html { scroll-behavior: smooth; }
 
-/* Height of your sticky navbar */
-:root { --nav-h: 64px; } /* tweak to your actual header height */
-
-/* Prevent anchor targets from sitting under the navbar */
-section[id] { scroll-margin-top: var(--nav-h); }
+section {
+  margin-bottom: 5rem;
+}
 
 
 

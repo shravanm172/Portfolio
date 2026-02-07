@@ -5,7 +5,7 @@ import "../../styles/experience.css"; // same CSS base as WporkExperience
 const PROJECTS = [
   {
     title: "All Fours — Multiplayer Web App",
-    period: "2024 – Present",
+    // period: "2024 – Present",
     blurb:
       "Realtime card game with lobby, reconnect logic, and trick-taking engine. Focused on performant renders and resilient WebSocket flows.",
     bullets: [
@@ -14,8 +14,30 @@ const PROJECTS = [
       "Optimized design for minimal re-renders and responsive mobile play",
     ],
     skills: ["React", "JavaScript", "Node", "WebSockets", "Vite", "CSS"],
-    repo: "https://github.com/shravanm172/All-Fours-Web-App.git", // ← update
-    images: ["/images/a4s3.png", "/images/a4s1.png", "/images/a4s2.png"],
+    repo: "https://github.com/shravanm172/All-Fours-Web-App.git",
+    images: ["/images/a4s1.png", "/images/a4s2.png"],
+  },
+  {
+    title: "Study Buddy",
+    // period: "2024 – Present",
+    blurb:
+      "Full-stack study group matching platform that helps students connect based on shared courses. Features group discovery, direct requests, and real-time chat with a scalable backend architecture.",
+    bullets: [
+      "Built a full-stack React + Flask application with PostgreSQL for structured academic data",
+      "Implemented group matching, public group feed, and direct partner requests based on shared courses",
+      "Designed a layered backend architecture (controllers, services, repositories) with real-time chat support",
+    ],
+    skills: [
+      "React",
+      "JavaScript",
+      "Flask",
+      "PostgreSQL",
+      "REST APIs",
+      "Firebase",
+      "CSS",
+    ],
+    repo: "https://github.com/shravanm172/StudyBuddy.git",
+    images: ["/images/studybuddy1.png", "/images/studybuddy2.png"],
   },
 ];
 

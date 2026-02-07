@@ -73,7 +73,8 @@
   /* gallery column gets a nice wide rail, text flexes */
   grid-template-columns: minmax(380px, 560px) 1fr;
   gap: 2rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   align-items: start;
 }
 
@@ -84,7 +85,7 @@
   margin-top: 0.25rem;
 }
 
-/* Mobile: stack */
+/* Mobile: stack items vertically */
 @media (max-width: 768px) {
   .project-block {
     grid-template-columns: 1fr;
@@ -93,29 +94,33 @@
     max-width: 640px;
     margin: 0 auto;
   }
+  
+  .gallery-item {
+    flex: 0 0 100%; /* On mobile, take full width */
+    max-width: 100%;
+  }
 }
 
-/* --- Masonry gallery (use column-width so items scale bigger) --- */
+/* --- Simplified Gallery Layout --- */
 :root {
-  --gallery-gap: 12px;
+  --gallery-gap: 16px;
   --gallery-radius: 8px;
   --gallery-border: 1px solid #e5e7eb;
   --gallery-shadow: var(--shadow);
 }
 
 .gallery-masonry {
-  /* Instead of fixed column-count, set a desired tile width.
-     The browser will auto-fit 2–4 columns based on available space,
-     which makes each image *larger* in a wider container. */
-  column-width: 240px; /* bump to 280px if you want even bigger tiles */
-  column-gap: var(--gallery-gap);
+  /* Use flexbox for simple side-by-side layout with wrapping */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gallery-gap);
+  align-items: flex-start;
 }
 
 .gallery-item {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 var(--gallery-gap);
-  break-inside: avoid;
+  /* Smaller, fixed-width items that don't grow */
+  flex: 0 0 220px; /* don't grow, don't shrink, base width of 220px */
+  max-width: 220px; /* cap the maximum width */
   border-radius: var(--gallery-radius);
   overflow: hidden;
   border: var(--gallery-border);
@@ -287,23 +292,7 @@
     padding: 0rem 2rem;
   }
 
-  .gallery-item {
-    width: 100px;
-    height: auto;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .gallery-masonry {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;;
-  }
+  /* Mobile gallery styles are handled by the main responsive rules above */
 
   .project-info h4 {
     font-size: 1.5rem;

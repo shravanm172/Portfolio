@@ -28,11 +28,7 @@ const EXPERIENCE = [
       },
       {
         title: "My Place Real Estate Website",
-        images: [
-          "/images/myplace1.png",
-          "/images/myplace2.png",
-          "/images/myplace3.png",
-        ],
+        images: ["/images/myplace1.png", "/images/myplace3.png"],
         details: [
           "Created property listing site with separate mobile/desktop templates.",
           "Implemented dynamic Flask routes for individual property pages.",
@@ -108,7 +104,11 @@ export default function WorkExperience() {
                     ))}
                   </div>
                   <div className="project-link">
-                    <a href={proj.link} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={proj.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {proj.link}
                     </a>
                   </div>

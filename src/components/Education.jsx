@@ -2,6 +2,7 @@ import React from "react";
 import GpaWheel from "./GpaWheel.jsx";
 import MeritCarousel from "./MeritCarousel";
 import InstagramEmbed from "./InstagramEmbed";
+import EmblaMeritCarousel from "./EmblaMeritCarousel.jsx";
 import "../../styles/education.css";
 
 const MERIT_ITEMS = [
@@ -59,8 +60,8 @@ export const Education = () => {
                 value={3.9}
                 max={4.0}
                 colorClass="gpa-green"
-                sizeMobile={110}   // 👈 mobile
-                sizeDesktop={180}  // 👈 desktop
+                sizeMobile={110} // 👈 mobile
+                sizeDesktop={180} // 👈 desktop
                 stroke={14}
               />
               <div className="item">
@@ -71,7 +72,7 @@ export const Education = () => {
                   alt=""
                 />
                 <h3>Dean's List Honors</h3>
-                <p>Fall 2024 & Spring 2025</p>
+                <p>Fall 2024, Spring 2025, Fall 2025</p>
               </div>
               <div className="item">
                 <img
@@ -113,7 +114,12 @@ export const Education = () => {
                   rel="noopener noreferrer"
                   aria-label="View on Instagram"
                 >
-                  <img className="ig-card-img" src="/images/gift-of-life.PNG" alt="" loading="lazy" />
+                  <img
+                    className="ig-card-img"
+                    src="/images/gift-of-life.PNG"
+                    alt=""
+                    loading="lazy"
+                  />
                   <div className="ig-card-cta">View on Instagram ↗</div>
                 </a>
               </div>
@@ -200,7 +206,12 @@ export const Education = () => {
                   rel="noopener noreferrer"
                   aria-label="View on Instagram"
                 >
-                  <img className="ig-card-img" src="/images/matriculant-ig.png" alt="" loading="lazy" />
+                  <img
+                    className="ig-card-img"
+                    src="/images/matriculant-ig.png"
+                    alt=""
+                    loading="lazy"
+                  />
                   <div className="ig-card-cta">View on Instagram ↗</div>
                 </a>
               </div>
@@ -247,7 +258,7 @@ export const Education = () => {
         </div>
         <div className="timeline-content hvc-content">
           <div className="mobile-hvc">
-              <div className="row">
+            <div className="row">
               <GpaWheel
                 label="SAT Score"
                 value={1550}
@@ -290,16 +301,16 @@ export const Education = () => {
                 2023
               </a>
               <p>
-                In 2023, the Ministry of Education TT awarded 45 open scholarships
-                to the top-performing students nationally in the CAPE 2022/23
-                examinations, including 5 in the Communications and Information
-                Technology Studies category. It is a highly competitive and
-                prestigious honor that recognizes outstanding academic achievement
-                in my field. I was privileged to be one of these few recipients,
-                earning a full-ride scholarship that covers my tuition at any
-                accredited university worldwide. This enabled me to pursue my
-                undergraduate studies in Computer Science at Florida Institute of
-                Technology.
+                In 2023, the Ministry of Education TT awarded 45 open
+                scholarships to the top-performing students nationally in the
+                CAPE 2022/23 examinations, including 5 in the Communications and
+                Information Technology Studies category. It is a highly
+                competitive and prestigious honor that recognizes outstanding
+                academic achievement in my field. I was privileged to be one of
+                these few recipients, earning a full-ride scholarship that
+                covers my tuition at any accredited university worldwide. This
+                enabled me to pursue my undergraduate studies in Computer
+                Science at Florida Institute of Technology.
               </p>
             </div>
           </div>
@@ -311,25 +322,40 @@ export const Education = () => {
                 in Caribbean, with thousands of students from different
                 territories competing for a spot each year. It highlights the
                 top ten performers in each subject across all partcipating
-                countries. <br /><br />In 2021, I wrote CSEC examinations for 9 subjects,
-                earning 8 Grade 1s with full distinctions and 1 Grade 2. I was
-                also honored to place 4th in Mathematics and 2nd in Physics in
-                the entire Caribbean.<br /><br /> The next year, in 2022, I wrote 4 CAPE
-                Unit 1 subjects, earning 4 Grade 1s with full distinctions and
-                earning a place in a further 4 regional merit lists. I was
-                honored to place 9th in Pure Mathematics U1, 9th in Applied
-                Mathematics U1, 7th in Computer Science U1 and 9th in
-                Information Technology U1.<br /><br /> I then went on to write 4 CAPE Unit 2
-                subjects in addition to Communication Studies and Caribbean
-                Studies the following year, earning 6 Grade 1s with full
-                distinctions. Additionally, I placed 3rd in Pure Mathematics U2
-                and 3rd in Applied Mathematics U2. <br /><br />In total, I have earned a
-                spot in 10 regional merit lists, placing me amongst the region's
-                top performers in these subjects.
+                countries. <br />
+                <br />
+                In 2021, I wrote CSEC examinations for 9 subjects, earning 8
+                Grade 1s with full distinctions and 1 Grade 2. I was also
+                honored to place 4th in Mathematics and 2nd in Physics in the
+                entire Caribbean.
+                <br />
+                <br /> The next year, in 2022, I wrote 4 CAPE Unit 1 subjects,
+                earning 4 Grade 1s with full distinctions and earning a place in
+                a further 4 regional merit lists. I was honored to place 9th in
+                Pure Mathematics U1, 9th in Applied Mathematics U1, 7th in
+                Computer Science U1 and 9th in Information Technology U1.
+                <br />
+                <br /> I then went on to write 4 CAPE Unit 2 subjects in
+                addition to Communication Studies and Caribbean Studies the
+                following year, earning 6 Grade 1s with full distinctions.
+                Additionally, I placed 3rd in Pure Mathematics U2 and 3rd in
+                Applied Mathematics U2. <br />
+                <br />
+                In total, I have earned a spot in 10 regional merit lists,
+                placing me amongst the region's top performers in these
+                subjects.
               </p>
             </div>
             <div className="merit-col">
-              <MeritCarousel items={MERIT_ITEMS} />
+              <EmblaMeritCarousel
+                items={MERIT_ITEMS}
+                options={{
+                  loop: false,
+                  align: "start",
+                  dragFree: true,
+                  containScroll: "trimSnaps",
+                }}
+              />
             </div>
           </div>
           <div className="row astro-row">
@@ -346,18 +372,20 @@ export const Education = () => {
                 Astronomy Quiz, earning 3rd place in 2021 and 2nd place in 2022.
                 Beyond these achievements, what mattered most to me was sparking
                 curiosity among my peers and developing leadership and
-                organizational skills that I continue to use today. <br /><br />I also
-                devoted time to the Hillview Environmental Action League, where
-                I worked with classmates to plan school-wide clean-ups and
-                promote recycling initiatives. Some of my favorite memories come
-                from beach clean-up events, where the impact of our efforts was
-                immediately visible and deeply rewarding.<br /><br /> Finally, I was proud
-                to represent Hillview on the Spartans football team for three
-                years. Weekly practices and competitive matches against other
-                schools taught me the discipline, teamwork, and resilience that
-                come from pushing yourself both individually and as part of a
-                group. These lessons continue to influence how I approach
-                challenges, on and off the field.
+                organizational skills that I continue to use today. <br />
+                <br />I also devoted time to the Hillview Environmental Action
+                League, where I worked with classmates to plan school-wide
+                clean-ups and promote recycling initiatives. Some of my favorite
+                memories come from beach clean-up events, where the impact of
+                our efforts was immediately visible and deeply rewarding.
+                <br />
+                <br /> Finally, I was proud to represent Hillview on the
+                Spartans football team for three years. Weekly practices and
+                competitive matches against other schools taught me the
+                discipline, teamwork, and resilience that come from pushing
+                yourself both individually and as part of a group. These lessons
+                continue to influence how I approach challenges, on and off the
+                field.
               </p>
             </div>
           </div>

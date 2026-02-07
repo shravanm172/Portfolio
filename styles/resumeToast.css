@@ -1,0 +1,83 @@
+.resume-widget {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+}
+
+/* Attention animation = subtle bounce/pulse */
+.resume-widget.attention {
+  animation: resumeNudge 650ms cubic-bezier(0.2, 0.9, 0.2, 1) 2;
+}
+
+@keyframes resumeNudge {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Launcher */
+.resume-launcher {
+  border: 1px solid rgba(255,255,255,0.16);
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: 999px;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Panel */
+.resume-panel {
+  width: 320px;
+  max-width: calc(100vw - 36px);
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  padding: 14px;
+}
+
+/* Dot */
+.resume-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: inline-block;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+}
+
+/* Buttons */
+.resume-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.resume-primary,
+.resume-secondary {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.resume-primary {
+  background: #22c55e;
+  color: #052e16;
+  font-weight: 800;
+}
+
+.resume-secondary {
+  background: rgba(255,255,255,0.12);
+  color: #f8fafc;
+}
