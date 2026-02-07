@@ -326,6 +326,11 @@ img.logo {
     gap: 1rem;
   }
 
+  .education {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .mobile {
     display: block !important;
   }
@@ -340,7 +345,7 @@ img.logo {
   }
 
   .timeline {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 
   .timeline-content {

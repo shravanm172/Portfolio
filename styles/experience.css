@@ -82,7 +82,7 @@
   gap: var(--gallery-gap);
   align-items: flex-start;
 
-  flex: 0 0 clamp(380px, 42vw, 560px); /* rail width */
+  flex: 0 0 clamp(280px, 42vw, 560px); /* rail width */
   max-width: none;
   margin-top: 0.25rem;
 }
