@@ -1,6 +1,5 @@
 import React from "react";
 import GpaWheel from "./GpaWheel.jsx";
-import MeritCarousel from "./MeritCarousel";
 import InstagramEmbed from "./InstagramEmbed";
 import EmblaMeritCarousel from "./EmblaMeritCarousel.jsx";
 import "../../styles/education.css";
@@ -53,7 +52,7 @@ export const Education = () => {
             <h3>Florida Institute of Technology, Melbourne, FL</h3>
             <p>B.S. Computer Science (August 2024 – May 2027)</p>
           </div>
-          <div className="timeline-content">
+          <div className="timeline-content uni-content">
             <div className="row">
               <GpaWheel
                 label="Cumulative GPA"
@@ -105,67 +104,69 @@ export const Education = () => {
                 <p className="abt-club">Initiated Spring 2025</p>
               </div>
             </div>
-            <div className="row ig-row float-wrap">
-              <div className="mobile-ig">
-                <a
-                  className="ig-card"
-                  href="https://www.instagram.com/p/DFszQKkpsOf/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View on Instagram"
-                >
-                  <img
-                    className="ig-card-img"
-                    src="/images/gift-of-life.PNG"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <div className="ig-card-cta">View on Instagram ↗</div>
-                </a>
-              </div>
-              <div className="ig-embed-desktop">
-                <InstagramEmbed url="https://www.instagram.com/p/DFszQKkpsOf/" />
-              </div>
-              <p className="timeline-abt">
-                At the Florida Institute of Technology, one of Florida’s premier
-                STEM universities, I embarked on a new chapter both academically
-                and personally. Transferring schools meant leaving behind my
-                friends and family to pursue my Computer Science degree, and
-                while the adjustment was challenging, it has been one of the
-                most rewarding experiences of my life. I am currently a
-                sophomore, making the most of every opportunity to grow. <br />
-                <br />
-                In Spring 2025, I rushed and was initiated into Chi Phi
-                Fraternity, the nation’s oldest social fraternity. This
-                brotherhood has given me the chance to form meaningful
-                friendships with peers from across the country, while also
-                engaging in service projects that reminded me education is not
-                only about ambition, but also about purpose. I’ve had the
-                privilege of supporting causes such as a local orphanage, Gift
-                of Life, and Wounded Warriors—experiences that have instilled in
-                me a deeper commitment to service and community. <br />
-                <br />
-                In August 2025, I was inducted into Upsilon Pi Epsilon (UPE),
-                the international honor society for computing sciences. Joining
-                this prestigious organization has allowed me to connect with the
-                top students in my field and give back through tutoring at the
-                Computer Science help desk. Looking ahead, I am excited to
-                represent Florida Tech with the Competitive Programming Team,
-                including the upcoming International Collegiate Programming
-                Contest (ICPC).
-                <br />
-                <br />
-                Academically, I have remained dedicated to excellence, earning
-                Dean’s List honors in both semesters so far. This distinction
-                also led to my induction into Phi Eta Sigma, a national honor
-                society that recognizes first-year academic achievement. Beyond
-                academics, I spent a year with the Florida Tech Club Soccer
-                Team, where I trained and competed with peers across the
-                division, reinforcing lessons of discipline and teamwork. My
-                time at Florida Tech has been one of transformation—balancing
-                scholarship, service, leadership, and personal growth.
-              </p>
+            {/* <div className="row ig-row float-wrap"> */}
+
+            <div className="ig-embed-desktop">
+              <InstagramEmbed url="https://www.instagram.com/p/DFszQKkpsOf/" />
             </div>
+            <div className="mobile-ig">
+              <a
+                className="ig-card"
+                href="https://www.instagram.com/p/DFszQKkpsOf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View on Instagram"
+              >
+                <img
+                  className="ig-card-img"
+                  src="/images/gift-of-life.png"
+                  alt=""
+                  loading="lazy"
+                />
+                <div className="ig-card-cta">View on Instagram ↗</div>
+              </a>
+            </div>
+            <p className="timeline-abt">
+              At the Florida Institute of Technology, one of Florida’s premier
+              STEM universities, I embarked on a new chapter both academically
+              and personally. Transferring schools meant leaving behind my
+              friends and family to pursue my Computer Science degree, and while
+              the adjustment was challenging, it has been one of the most
+              rewarding experiences of my life. I am currently a sophomore,
+              making the most of every opportunity to grow. <br />
+              <br />
+              In Spring 2025, I rushed and was initiated into Chi Phi
+              Fraternity, the nation’s oldest social fraternity. This
+              brotherhood has given me the chance to form meaningful friendships
+              with peers from across the country, while also engaging in service
+              projects that reminded me education is not only about ambition,
+              but also about purpose. I’ve had the privilege of supporting
+              causes such as a local orphanage, Gift of Life, and Wounded
+              Warriors—experiences that have instilled in me a deeper commitment
+              to service and community. <br />
+              <br />
+              In August 2025, I was inducted into Upsilon Pi Epsilon (UPE), the
+              international honor society for computing sciences. Joining this
+              prestigious organization has allowed me to connect with the top
+              students in my field and give back through tutoring at the
+              Computer Science help desk. Looking ahead, I am excited to
+              represent Florida Tech with the Competitive Programming Team,
+              including the upcoming International Collegiate Programming
+              Contest (ICPC).
+              <br />
+              <br />
+              Academically, I have remained dedicated to excellence, earning
+              Dean’s List honors in both semesters so far. This distinction also
+              led to my induction into Phi Eta Sigma, a national honor society
+              that recognizes first-year academic achievement. Beyond academics,
+              I spent a year with the Florida Tech Club Soccer Team, where I
+              trained and competed with peers across the division, reinforcing
+              lessons of discipline and teamwork. My time at Florida Tech has
+              been one of transformation—balancing scholarship, service,
+              leadership, and personal growth.
+            </p>
+
+            {/* </div> */}
           </div>
         </div>
 
@@ -178,7 +179,7 @@ export const Education = () => {
             </h3>
             <p>B.Sc. Computer Science (August 2023 – December 2023)</p>
           </div>
-          <div className="timeline-content">
+          <div className="timeline-content uni-content">
             <div className="row">
               <GpaWheel
                 label="Cumulative GPA"
@@ -197,54 +198,52 @@ export const Education = () => {
                 {/* <p className="abt-club">Dean's List Honors -Fall 2023</p> */}
               </div>
             </div>
-            <div className="row ig-row float-wrap">
-              <div className="mobile-ig">
-                <a
-                  className="ig-card"
-                  href="https://www.instagram.com/p/CxwKEnlyQOC/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View on Instagram"
-                >
-                  <img
-                    className="ig-card-img"
-                    src="/images/matriculant-ig.png"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <div className="ig-card-cta">View on Instagram ↗</div>
-                </a>
-              </div>
-              <div className="ig-embed-desktop">
-                <InstagramEmbed url="https://www.instagram.com/p/CxwKEnlyQOC/" />
-              </div>
-              <p className="timeline-abt">
-                After graduating secondary school in May 2023, I began my
-                tertiary journey at the University of the West Indies (UWI), the
-                Caribbean’s largest and most prestigious university. Although my
-                time there was brief—thanks to the tremendous fortune of winning
-                an Open Scholarship that allowed me to continue my undergraduate
-                studies abroad at Florida Tech—my UWI experience was both
-                meaningful and memorable. <br />
-                <br />
-                One of the greatest honors of my life was being named the Top
-                Matriculant 2023/24, an award presented to just one student out
-                of hundreds in the incoming class. More than recognizing
-                academic achievement, it highlighted qualities of leadership and
-                well-roundedness. At the matriculation ceremony in September
-                2023, I had the privilege of signing the symbolic Matriculation
-                Register on behalf of my cohort—a moment that filled me with
-                immense pride and gratitude. This recognition opened doors to
-                further opportunities, including being interviewed and featured
-                on the front cover of UWI Today, the university’s official
-                publication.
-                <br />
-                <br /> Even within that short period, I remained committed to
-                academic excellence, earning a 4.12 GPA with Dean’s List honors.
-                My time at UWI reinforced my confidence in what I could achieve
-                and laid the foundation for the next chapter of my education.
-              </p>
+
+            <div className="mobile-ig">
+              <a
+                className="ig-card"
+                href="https://www.instagram.com/p/CxwKEnlyQOC/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View on Instagram"
+              >
+                <img
+                  className="ig-card-img"
+                  src="/images/top_matriculant.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <div className="ig-card-cta">View on Instagram ↗</div>
+              </a>
             </div>
+            <div className="ig-embed-desktop">
+              <InstagramEmbed url="https://www.instagram.com/p/CxwKEnlyQOC/" />
+            </div>
+            <p className="timeline-abt">
+              After graduating secondary school in May 2023, I began my tertiary
+              journey at the University of the West Indies (UWI), the
+              Caribbean’s largest and most prestigious university. Although my
+              time there was brief—thanks to the tremendous fortune of winning
+              an Open Scholarship that allowed me to continue my undergraduate
+              studies abroad at Florida Tech—my UWI experience was both
+              meaningful and memorable. <br />
+              <br />
+              One of the greatest honors of my life was being named the Top
+              Matriculant 2023/24, an award presented to just one student out of
+              hundreds in the incoming class. More than recognizing academic
+              achievement, it highlighted qualities of leadership and
+              well-roundedness. At the matriculation ceremony in September 2023,
+              I had the privilege of signing the symbolic Matriculation Register
+              on behalf of my cohort—a moment that filled me with immense pride
+              and gratitude. This recognition opened doors to further
+              opportunities, including being interviewed and featured on the
+              front cover of UWI Today, the university’s official publication.
+              <br />
+              <br /> Even within that short period, I remained committed to
+              academic excellence, earning a 4.12 GPA with Dean’s List honors.
+              My time at UWI reinforced my confidence in what I could achieve
+              and laid the foundation for the next chapter of my education.
+            </p>
           </div>
         </div>
 

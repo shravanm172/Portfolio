@@ -3,14 +3,15 @@
 section#home {
   width: 100%;
   max-width: 100vw;
-  overflow-x:hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   background-repeat: no-repeat;
-  box-sizing:border-box;
+  box-sizing: border-box;
+  margin-top: 0;
 }
 
 section#home::before {
@@ -22,7 +23,7 @@ section#home::before {
   z-index: 0;
   width: 100vw;
   max-width: 100vw;
-  min-width:0;
+  min-width: 0;
 }
 
 section#home::after {
@@ -46,7 +47,7 @@ section#home > * {
 }
 
 .main-banner-content h1 {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
 }
 
 .avatar-container {
@@ -66,9 +67,9 @@ section#home > * {
 }
 
 .navbar ul {
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   gap: 6rem;
   font-size: 2rem;
   list-style: none;
@@ -84,7 +85,7 @@ section#home > * {
 }
 
 .navbar li a {
-  color: var(--color-white)
+  color: var(--color-white);
 }
 
 .main-about {
@@ -92,8 +93,7 @@ section#home > * {
   text-align: center;
 }
 
-
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   section#home::before {
     background-attachment: scroll;
   }
@@ -114,7 +114,7 @@ section#home > * {
     font-size: 1.2rem;
   }
 
-  .avatar-container{
+  .avatar-container {
     width: 100;
     height: auto;
   }
@@ -132,9 +132,9 @@ section#home > * {
     font-size: 1rem;
   }
 
-  .navbar ul{
+  .navbar ul {
     flex-wrap: wrap;
-    gap:1rem;
+    gap: 1rem;
     justify-content: center;
   }
 
@@ -179,7 +179,10 @@ section#home > * {
   color: var(--text-muted);
   text-decoration: none;
 
-  transition: transform 120ms ease, filter 120ms ease, background 120ms ease;
+  transition:
+    transform 120ms ease,
+    filter 120ms ease,
+    background 120ms ease;
   white-space: nowrap;
 }
 
@@ -214,7 +217,7 @@ section#home > * {
 
 /* Optional "active tab" styling (if you add active logic later) */
 .vscode-tab.is-active {
-  background: var(--bg-main);              /* looks like active editor tab */
+  background: var(--bg-main); /* looks like active editor tab */
   color: var(--text-primary);
   border-color: var(--border-subtle);
 }

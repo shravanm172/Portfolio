@@ -20,7 +20,7 @@ h2.section-heading {
   margin: 0 auto;
   padding-left: 4rem;
   padding-right: 0;
-  border-left: 2px solid #333;
+  border-left: 2px solid white;
 }
 
 .timeline-item {
@@ -34,7 +34,7 @@ h2.section-heading {
   top: 0.5rem;
   width: 1.6rem;
   height: 1.6rem;
-  background-color: #333;
+  background-color: white;
   border-radius: 50%;
 }
 
@@ -49,27 +49,7 @@ h2.section-heading {
 
 .timeline-desc p {
   margin: 0.2rem 0 0;
-  color: #666;
-}
-
-.timeline-content {
-  margin-top: 2.5rem;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.timeline-content .column {
-  display: none;
-}
-
-.timeline-content .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 5rem;
-  margin-bottom: 3rem;
+  color: rgb(175, 165, 165);
 }
 
 .logo-wrapper {
@@ -84,21 +64,81 @@ img.logo {
   height: auto;
 }
 
+.timeline-content {
+  margin-top: 2.5rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-content .column {
+  display: none; /* hide on desktop */
+}
+
+.timeline-content .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5rem;
+  margin-bottom: 3rem;
+}
+
+/* University Row Styles --------------------------------*/
+/* Float ig embed aroud pargraph text on desktop */
+.timeline-content.uni-content {
+  display: block; /* allow floats */
+}
+
+.timeline-content.uni-content .ig-embed-desktop {
+  float: right;
+  width: clamp(260px, 32vw, 420px);
+  margin: 0 0 1.2rem 2.5rem;
+}
+
+.timeline-content.uni-content .ig-embed-desktop .instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.timeline-content.uni-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .timeline-content.uni-content {
+    display: block !important;
+  }
+
+  .timeline-content.uni-content > .row {
+    float: left;
+    width: 110px;
+    margin: 0 1.5rem 3rem 0;
+  }
+
+  .timeline-content.uni-content .mobile-ig {
+    float: right;
+    width: clamp(200px, 52vw, 320px);
+    margin: 0 0 1rem 1.5rem;
+    display: block !important;
+  }
+
+  .timeline-content.uni-content .timeline-abt {
+    margin-top: 0;
+    clear: right;
+  }
+}
+
+/* Instagram Embed Styles ---------------------------*/
 .mobile-ig {
   display: none;
 }
 
-.ig-row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 4rem;
-  margin-top: 3rem;
-}
-
-.ig-wrap {
-  margin: 0;
-  max-width: 400px;
+.mobile {
+  display: none;
 }
 
 .instagram-media {
@@ -108,6 +148,7 @@ img.logo {
   padding: 0;
   margin: 0;
 }
+/* ----------------------------------*/
 
 .scholarship-row {
   display: flex;
@@ -115,39 +156,6 @@ img.logo {
   align-items: flex-start;
   gap: 4rem;
   margin-top: 3rem;
-}
-
-.mobile {
-  display: none;
-}
-
-/* ======= UWI Row Styles ======= */
-
-/* ========== UWI row: float IG embed around text (desktop only) ========== */
-
-.row.ig-row.float-wrap {
-  display: block !important; /* kill flex so text can wrap */
-}
-
-/* Float the desktop embed so text wraps beside + under */
-.row.ig-row.float-wrap .ig-embed-desktop {
-  float: right;
-  width: clamp(260px, 32vw, 420px);
-  margin: 0 0 1.2rem 2.5rem;
-}
-
-/* Make the embed respect the float width */
-.row.ig-row.float-wrap .ig-embed-desktop .instagram-media {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-}
-
-/* Clearfix */
-.row.ig-row.float-wrap::after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 /* Merit List Styles --------------------------------*/
@@ -173,75 +181,6 @@ img.logo {
 }
 .merit-desc .tight li {
   margin: 0.25rem 0;
-}
-
-.merit-carousel {
-  position: relative;
-  overflow: hidden;
-  padding: 8px 0;
-}
-.merit-track {
-  display: flex;
-  transition: transform 0.45s ease;
-  will-change: transform;
-}
-.merit-slide {
-  min-width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.6rem;
-}
-
-.merit-media {
-  width: 100%;
-  height: auto;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.merit-body h3 {
-  margin: 0.25rem 0 0.5rem;
-}
-.merit-body p {
-  margin: 0;
-  font-size: 1.4rem;
-}
-.merit-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 1px solid #c9d4e6;
-  background: #fff;
-  padding: 0.8rem 1rem;
-  border-radius: 999px;
-  box-shadow: var(--shadow);
-}
-.merit-nav.prev {
-  left: 0.8rem;
-}
-.merit-nav.next {
-  right: 0.8rem;
-}
-.merit-dots {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-.merit-dots .dot {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  border: 0.1rem solid #c9d4e6;
-  background: #fff;
-  padding: 0;
-}
-.merit-dots .dot.active {
-  background: var(--primary);
-  border-color: var(--primary);
 }
 
 /* ========== Merit row: float-wrap (text wraps under carousel) ========== */
@@ -326,11 +265,6 @@ img.logo {
     gap: 1rem;
   }
 
-  .education {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
   .mobile {
     display: block !important;
   }
@@ -345,7 +279,7 @@ img.logo {
   }
 
   .timeline {
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 
   .timeline-content {
@@ -428,37 +362,6 @@ img.logo {
     width: 100%;
   }
 
-  /* Center the carousel itself and cap its width */
-  .merit-carousel {
-    width: 100%;
-    max-width: 420px; /* adjust: 360–520px works well */
-    margin: 0 auto; /* <-- centers */
-    padding-top: 0;
-  }
-
-  /* Make slide media fill the carousel width */
-  .merit-media {
-    width: 100%;
-  }
-  .merit-media img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Optional: tighten dots spacing on small screens */
-  .merit-dots {
-    gap: 0.75rem;
-  }
-
-  .merit-body h3 {
-    font-size: 1rem;
-  }
-
-  .merit-body a {
-    font-size: 1rem;
-  }
-
   .abt-club {
     width: 100%;
   }
@@ -476,10 +379,6 @@ img.logo {
 }
 
 @media (max-width: 480px) {
-  .merit-carousel {
-    max-width: 300px;
-  }
-
   .club-media {
     width: 100%;
     max-width: 300px;
