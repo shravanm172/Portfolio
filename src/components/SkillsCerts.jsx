@@ -6,7 +6,7 @@ const CERTIFICATE_ITEMS = [
   {
     src: "/images/mozilla-js-cert.jpg",
     title: "JavaScript Foundations Professional Certificate",
-    desc: "Built a strong foundation in JavaScript by mastering core concepts such as syntax, data types, functions, and control flow. This certification strengthened my ability to write clean, efficient code and laid the groundwork for more advanced front-end and full-stack development.",
+    desc: "Learned the fundamentals of JavaScript, including the concepts of the core syntax, functions, DOM model, etc. This training has served as my foundation for building interactive frontend components and full-stack web apps.",
     issuer: "Mozilla",
     year: "2024",
   },
@@ -20,15 +20,15 @@ const CERTIFICATE_ITEMS = [
   {
     src: "/images/pandas-cert.jpg",
     title: "Data Analysis with Python and Pandas",
-    desc: "Developed skills in manipulating, cleaning, and analyzing datasets with Python and Pandas. Learned how to generate meaningful insights and create effective visualizations, skills that are critical for data-driven decision-making and automation projects.",
+    desc: "Developed skills in manipulating, cleaning, and analyzing real-world datasets with Python and the Pandas library. Learned how to generate meaningful insights and create effective visualizations, skills that I look forward to applying in automation projects.",
     issuer: "LinkedIn Learning",
     year: "2024",
   },
   {
     src: "/images/ms-gen-ai-cert.jpg",
     title: "Career Essentials in Generative AI",
-    desc: "Explored the fundamentals of generative AI, including key models, tools, and ethical considerations. This program introduced me to practical applications of AI in problem-solving and creative innovation, broadening my perspective on the future of technology.",
-    issuer: "Microsoft & LinkedIn",
+    desc: "Learned the fundamentals of GenAI, including core models, tools, and ethical considerations. This program introduced me to practical applications of AI in problem-solving and creative innovation, broadening my perspective on the future of technology.",
+    issuer: "Microsoft",
     year: "2024",
   },
   {

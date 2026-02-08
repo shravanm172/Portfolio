@@ -42,6 +42,10 @@
   line-height: 1.4;
 }
 
+p.muted {
+  font-size: 1.2rem;
+}
+
 /* Clickable but visually identical thumbnail wrapper */
 .skill-thumb {
   display: block;
@@ -135,11 +139,11 @@
   .skills-list {
     flex-direction: row;
     flex-wrap: wrap;
-    margin:0;
+    margin: 0;
     align-items: flex-start;
     justify-content: center;
   }
-  
+
   .skill-row {
     grid-template-columns: 1fr;
     text-align: center;
@@ -150,10 +154,10 @@
     margin: 0 auto;
   }
 
-  .skill-desc h3{
+  .skill-desc h3 {
     font-size: 1.2rem;
   }
-  
+
   .skill-desc p {
     font-size: 1rem;
   }

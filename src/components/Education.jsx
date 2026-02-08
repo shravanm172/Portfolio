@@ -45,12 +45,56 @@ export const Education = () => {
     <section id="education">
       <h2 className="section-heading">Education</h2>
       <div className="timeline" data-aos="fade-up">
+        {/* University of Central Florida */}
+        <div className="timeline-item">
+          <div className="timeline-dot"></div>
+          <div className="timeline-desc">
+            <h3>University of Central Florida, Orlando, FL</h3>
+            <p>B.S. Computer Science (January 2026 – May 2028)</p>
+          </div>
+          <div className="timeline-content uni-content">
+            <div className="row">
+              <div className="item">
+                <img
+                  className="logo"
+                  src="/images/UCFlogo.png"
+                  alt=""
+                  // style={{ height: "80px", width: "80px" }}
+                />
+              </div>
+            </div>
+            <p className="timeline-abt">
+              I transferred to the University of Central Florida in Spring 2026
+              to further challenge myself and to grow professionally within one
+              of the strongest computer science environments in the US. The
+              school’s values of Integrity, Scholarship, Community, Creativity,
+              and Excellence are principles that closely align with how I
+              approach my academic and personal development. <br />
+              <br />
+              While such a transition comes at the cost of moving away from my
+              valued colleagues and community at Florida Tech, I am confident
+              that it will pay off in the grand scheme of my career. The thing I
+              look forward to the most is pursuing a minor in FinTech in Fall
+              2026 as I explore the growing intersection of technology and the
+              finance industry. I have begun engaging with the campus community
+              by joining the Association for Computing Machinery where I have
+              attended seminars and workshops that have broadened my perspective
+              on the latest developments in the tech industry. I hope to take
+              advantage of the incredible internship opportunities offered by
+              this school soon. For now, I am grateful to be learning from the
+              exceptional faculty at this institution as I embrace this new
+              chapter of my academic journey. <br />
+              <b>Go Knights!</b>
+            </p>
+          </div>
+        </div>
+
         {/* Florida Tech */}
         <div className="timeline-item">
           <div className="timeline-dot"></div>
           <div className="timeline-desc">
             <h3>Florida Institute of Technology, Melbourne, FL</h3>
-            <p>B.S. Computer Science (August 2024 – May 2027)</p>
+            <p>B.S. Computer Science (August 2024 – December 2025)</p>
           </div>
           <div className="timeline-content uni-content">
             <div className="row">
@@ -127,43 +171,40 @@ export const Education = () => {
               </a>
             </div>
             <p className="timeline-abt">
-              At the Florida Institute of Technology, one of Florida’s premier
-              STEM universities, I embarked on a new chapter both academically
-              and personally. Transferring schools meant leaving behind my
-              friends and family to pursue my Computer Science degree, and while
-              the adjustment was challenging, it has been one of the most
-              rewarding experiences of my life. I am currently a sophomore,
-              making the most of every opportunity to grow. <br />
-              <br />
-              In Spring 2025, I rushed and was initiated into Chi Phi
-              Fraternity, the nation’s oldest social fraternity. This
-              brotherhood has given me the chance to form meaningful friendships
-              with peers from across the country, while also engaging in service
-              projects that reminded me education is not only about ambition,
-              but also about purpose. I’ve had the privilege of supporting
-              causes such as a local orphanage, Gift of Life, and Wounded
-              Warriors—experiences that have instilled in me a deeper commitment
-              to service and community. <br />
-              <br />
-              In August 2025, I was inducted into Upsilon Pi Epsilon (UPE), the
-              international honor society for computing sciences. Joining this
-              prestigious organization has allowed me to connect with the top
-              students in my field and give back through tutoring at the
-              Computer Science help desk. Looking ahead, I am excited to
-              represent Florida Tech with the Competitive Programming Team,
-              including the upcoming International Collegiate Programming
-              Contest (ICPC).
+              At Florida Tech, one of Florida’s finest STEM universities, I
+              experienced a period of significant academic and personal growth.
+              As a Computer Science major, I challenged myself to fully engage
+              with the university’s rigorous curriculum while remaining active
+              in campus life. What began as an adjustment to life in a new
+              country quickly became one of the most rewarding chapters of my
+              journey—shaping my work ethic, independence, and sense of purpose.
               <br />
               <br />
-              Academically, I have remained dedicated to excellence, earning
-              Dean’s List honors in both semesters so far. This distinction also
-              led to my induction into Phi Eta Sigma, a national honor society
-              that recognizes first-year academic achievement. Beyond academics,
-              I spent a year with the Florida Tech Club Soccer Team, where I
-              trained and competed with peers across the division, reinforcing
-              lessons of discipline and teamwork. My time at Florida Tech has
-              been one of transformation—balancing scholarship, service,
-              leadership, and personal growth.
+              In Spring 2025, I was initiated into Chi Phi Fraternity, the
+              nation’s oldest social fraternity. Through this brotherhood, I
+              formed lasting connections with peers from across the country and
+              participated in service initiatives that reinforced the importance
+              of leadership and community involvement beyond academics. I
+              supported causes including local orphanages, Gift of Life, and
+              Wounded Warriors—experiences that strengthened my commitment to
+              service and community impact.
+              <br />
+              <br />
+              In August 2025, I was honored to be inducted into Upsilon Pi
+              Epsilon, the international honor society for computing sciences.
+              Membership in UPE allowed me to collaborate with top-performing
+              students in my field and give back through voluntary tutoring at
+              the Computer Science Help Desk.
+              <br />
+              <br />
+              Academically, I earned Dean’s List honors in all three semesters,
+              leading to my induction into Phi Eta Sigma at the conclusion of my
+              first year. Beyond the classroom, I spent a year competing with
+              the Florida Tech Club Soccer Team, where the discipline, teamwork,
+              and consistency required mirrored the mindset essential to
+              engineering and software development. My time at Florida Tech
+              represented a period of transformation—balancing scholarship,
+              leadership, service, and personal growth.
             </p>
 
             {/* </div> */}
@@ -220,18 +261,15 @@ export const Education = () => {
               <InstagramEmbed url="https://www.instagram.com/p/CxwKEnlyQOC/" />
             </div>
             <p className="timeline-abt">
-              After graduating secondary school in May 2023, I began my tertiary
-              journey at the University of the West Indies (UWI), the
-              Caribbean’s largest and most prestigious university. Although my
-              time there was brief—thanks to the tremendous fortune of winning
-              an Open Scholarship that allowed me to continue my undergraduate
-              studies abroad at Florida Tech—my UWI experience was both
-              meaningful and memorable. <br />
+              After graduating high school in May 2023, I began my tertiary
+              education journey at the University of the West Indies (UWI), the
+              Caribbean’s largest and most prestigious university. <br />
               <br />
-              One of the greatest honors of my life was being named the Top
-              Matriculant 2023/24, an award presented to just one student out of
-              hundreds in the incoming class. More than recognizing academic
-              achievement, it highlighted qualities of leadership and
+              In my first semester, I was bestowed one of the greatest honors of
+              my life, being named the Top Matriculatant 2023/24, an award
+              granted to just one student out of hundreds in the incoming class.
+              Beyond recognizing my lifelong academic achievement, this award
+              highlighted qualities of leadership, character, and
               well-roundedness. At the matriculation ceremony in September 2023,
               I had the privilege of signing the symbolic Matriculation Register
               on behalf of my cohort—a moment that filled me with immense pride
@@ -239,10 +277,13 @@ export const Education = () => {
               opportunities, including being interviewed and featured on the
               front cover of UWI Today, the university’s official publication.
               <br />
-              <br /> Even within that short period, I remained committed to
-              academic excellence, earning a 4.12 GPA with Dean’s List honors.
-              My time at UWI reinforced my confidence in what I could achieve
-              and laid the foundation for the next chapter of my education.
+              <br />
+              However, due to the tremendous fortune of being awarded an Open
+              Scholarship, my time at UWI was cut short, as I then went on to
+              continue my undergraduate studies abroad at Florida Tech. Though
+              brief, my experience at this university was deeply meaningful and
+              memorable, laying a strong foundation for the journey that
+              followed.
             </p>
           </div>
         </div>
@@ -300,16 +341,23 @@ export const Education = () => {
                 2023
               </a>
               <p>
-                In 2023, the Ministry of Education TT awarded 45 open
-                scholarships to the top-performing students nationally in the
-                CAPE 2022/23 examinations, including 5 in the Communications and
-                Information Technology Studies category. It is a highly
-                competitive and prestigious honor that recognizes outstanding
-                academic achievement in my field. I was privileged to be one of
-                these few recipients, earning a full-ride scholarship that
-                covers my tuition at any accredited university worldwide. This
-                enabled me to pursue my undergraduate studies in Computer
-                Science at Florida Institute of Technology.
+                In 2023, the Ministry of Education (Trinidad and Tobago) awarded
+                45 Open Scholarships to the top-performing students nationwide
+                in the CAPE 2022/23 examinations, including only five in the
+                Communications and Information Technology Studies category. This
+                highly competitive and prestigious award recognizes exceptional
+                academic excellence at the national level. I was honored to be
+                among this select group of recipients, earning a full-ride
+                scholarship that covers tuition at any accredited university
+                worldwide. I am deeply grateful for the opportunities this award
+                has opened for me—it represents the culmination of years of
+                dedication, discipline, and perseverance. Achieving an Open
+                Scholarship was a goal I aspired to from an early age, dating
+                back to my first days walking through the gates of Hillview
+                College. This scholarship enabled me to pursue my undergraduate
+                studies in Computer Science at the Florida Institute of
+                Technology, and continues to serve as both a foundation and a
+                responsibility as I advance through my academic journey.
               </p>
             </div>
           </div>
@@ -329,32 +377,33 @@ export const Education = () => {
 
             <div className="merit-desc">
               <p>
-                The CXC regional merit list is the pinnacle of academic prestige
-                in Caribbean, with thousands of students from different
-                territories competing for a spot each year. It highlights the
-                top ten performers in each subject across all partcipating
-                countries. <br />
+                The Caribbean Examinations Council (CXC) Regional Merit List
+                represents the highest level of academic distinction in the
+                Caribbean at the secondary level, recognizing the top ten
+                performers in each subject across all participating territories.
+                Each year, thousands of students compete for a spot, making
+                placement on the list a mark of exceptional academic
+                achievement. <br />
                 <br />
-                In 2021, I wrote CSEC examinations for 9 subjects, earning 8
-                Grade 1s with full distinctions and 1 Grade 2. I was also
-                honored to place 4th in Mathematics and 2nd in Physics in the
-                entire Caribbean.
+                In 2021, I completed nine CSEC subjects, earning eight Grade 1
+                passes with full distinctions and one Grade 2. That year, I
+                placed 4th in Mathematics and 2nd in Physics across the entire
+                Caribbean. <br />
                 <br />
-                <br /> The next year, in 2022, I wrote 4 CAPE Unit 1 subjects,
-                earning 4 Grade 1s with full distinctions and earning a place in
-                a further 4 regional merit lists. I was honored to place 9th in
-                Pure Mathematics U1, 9th in Applied Mathematics U1, 7th in
-                Computer Science U1 and 9th in Information Technology U1.
+                In 2022, I sat four CAPE Unit 1 subjects, earning four Grade 1
+                passes with full distinctions and securing placement on four
+                additional Regional Merit Lists. I placed 9th in Pure
+                Mathematics (U1), 9th in Applied Mathematics (U1), 7th in
+                Computer Science (U1), and 9th in Information Technology (U1).
                 <br />
-                <br /> I then went on to write 4 CAPE Unit 2 subjects in
-                addition to Communication Studies and Caribbean Studies the
-                following year, earning 6 Grade 1s with full distinctions.
-                Additionally, I placed 3rd in Pure Mathematics U2 and 3rd in
-                Applied Mathematics U2. <br />
                 <br />
-                In total, I have earned a spot in 10 regional merit lists,
-                placing me amongst the region's top performers in these
-                subjects.
+                The following year, I completed four CAPE Unit 2 subjects, along
+                with Communication Studies and Caribbean Studies, earning six
+                Grade 1 passes with full distinctions. I placed 3rd in Pure
+                Mathematics (U2) and 3rd in Applied Mathematics (U2) across the
+                region. In total, I have earned placement on 8 CXC Regional
+                Merit Lists, positioning me among the Caribbean’s top-performing
+                students in mathematics, computing, and related disciplines.
               </p>
             </div>
           </div>

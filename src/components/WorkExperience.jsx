@@ -4,11 +4,23 @@ import "../../styles/experience.css";
 
 const EXPERIENCE = [
   {
-    role: "Web Developer (Self-Employed)",
-    org: "Startup Business",
+    role: "Shravan's Web Solutions",
+    org: "Personal startup Business",
     period: "June 2024 – Present",
-    desc: "Designed and deployed full-stack web solutions for schools and small businesses.",
+    desc: "Designed and deployed full-stack web solutions for various clientelles",
     projects: [
+      {
+        title: "Homerun Diesel Engine and Emissions Repair",
+        images: ["/images/homerun1.png", "/images/homerun2.png"],
+        details: [
+          "Designed and developed a professional business website",
+          "Integrated Calendly for appointment scheduling and synchronized bookings with Google Calendar.",
+          "Streamlined business operations by setting up professional email accounts and calendar workflows.",
+          "Translated customer requirements into clearly defined service descriptions aligned with real-world engineering needs.",
+        ],
+        skills: ["React", "Calendly", "PostgreSQL", "CSS", "JavaScript"],
+        link: "https://www.homerundiesel.com/",
+      },
       {
         title: "El Dorado South Hindu School Website & Database",
         images: [
@@ -18,30 +30,37 @@ const EXPERIENCE = [
           "/images/edshs4.png",
         ],
         details: [
-          "Built event calendar with add/edit/delete capabilities for admin users.",
-          "Developed photo gallery with category filters and lightbox viewer.",
-          "Created Student Record Management System (React + Flask + PostgreSQL) for storing and manipulating biodata, grades, guardians, and medical information.",
+          "Built custom event calendar with add/edit/delete capabilities for admin users.",
+          "Designed admin dashboard for managing school events, news, and announcements.",
+          "Created Student Record Management System for storing and manipulating biodata, grades, guardians, and medical information.",
           "Implemented role-based access with authentication: admin vs public read-only views.",
         ],
-        skills: ["React", "Flask", "PostgreSQL", "CSS", "JavaScript"],
+        skills: [
+          "React",
+          "Flask",
+          "PostgreSQL",
+          "CSS",
+          "JavaScript",
+          "RestAPI",
+        ],
         link: "https://www.eldoradosouthhindu.org/",
       },
       {
         title: "My Place Real Estate Website",
         images: ["/images/myplace1.png", "/images/myplace3.png"],
         details: [
-          "Created property listing site with separate mobile/desktop templates.",
-          "Implemented dynamic Flask routes for individual property pages.",
-          "Built reusable slideshow and image gallery components.",
+          "Built a multi-page property listing website with structured property views and basic filtering.",
+          "Implemented individual property pages using template-based rendering and dynamic data injection.",
+          "Developed custom slideshow and image gallery components to showcase property listings.",
         ],
-        skills: ["Flask", "HTML", "CSS", "JavaScript", "Bootstrap"],
+        skills: ["Flask", "HTML", "CSS", "JavaScript", "React"],
         link: "https://www.myplace-realestate.com/desktop_index",
       },
     ],
   },
   {
     role: "Private Tutor",
-    org: "Self-Employed",
+    org: "Personal startup Business",
     period: "September 2023 – June 2024",
     desc: "Provided one-on-one tutoring in Applied Mathematics for high school students at an affordable price.",
     projects: [
@@ -51,7 +70,7 @@ const EXPERIENCE = [
           "Helped students improve grades and exam readiness in CAPE Applied Mathematics U1 & U2.",
           "Created personalized lesson plans and exercises.",
           "Successfully tutored 6 students, all of whom went on to achieve Grade 1s and 2s in their final exams.",
-          "Deepened my own understanding of statistics, probability, and discrete math.",
+          "Deepened my own understanding and appreciation of statistics, probability, and discrete math.",
         ],
         skills: [
           "Teaching",
