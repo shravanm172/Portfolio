@@ -13,9 +13,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 TODO:
-- fix footer
-- fix text in merit row on mobile
-- float banner column on mobile left
 - fix typography
 - update ucf
 - add homerun to work experience

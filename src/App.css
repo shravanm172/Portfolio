@@ -142,6 +142,18 @@ html {
   background-color: var(--bg-main);
 }
 
+a,
+h2,
+h3,
+h4,
+p.muted {
+  font-family: var(--font-mono);
+}
+
+h2.section-heading {
+  font-family: var(--font-body);
+}
+
 /* Scroll Effects */
 /* Global smooth scroll */
 html {

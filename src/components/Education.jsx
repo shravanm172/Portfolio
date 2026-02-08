@@ -9,12 +9,12 @@ const MERIT_ITEMS = [
     src: "/images/pure-u2.png",
     title: "CAPE Pure Mathematics – Unit 2",
     year: "2023",
+    href: "https://www.cxc.org/merit-lists/",
   },
   {
     src: "/images/applied-u2.png",
     title: "CAPE Applied Mathematics – Unit 2",
     year: "2023",
-    href: "https://www.cxc.org/merit-lists/",
   },
   {
     src: "/images/comp-sci-u1.png",

@@ -118,6 +118,7 @@ section#home > * {
 
 .main-about {
   width: 80%;
+  font-family: var(--font-mono);
   text-align: center;
 }
 

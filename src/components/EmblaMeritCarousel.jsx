@@ -83,7 +83,7 @@ export default function EmblaMeritCarousel({
                       target="_blank"
                       rel="noreferrer"
                     >
-                      View Merit List
+                      View Merit Lists
                     </a>
                   )}
                 </div>

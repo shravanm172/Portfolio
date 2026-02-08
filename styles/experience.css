@@ -47,8 +47,8 @@
 }
 
 .tag {
-  background: grey;
-  color: white;
+  background: white;
+  color: black;
   border: 1px solid #d8e0ef;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0.25rem 0.75rem;
@@ -82,7 +82,7 @@
   gap: var(--gallery-gap);
   align-items: flex-start;
 
-  flex: 0 0 clamp(280px, 42vw, 560px); /* rail width */
+  flex: 0 0 clamp(380px, 42vw, 560px); /* rail width */
   max-width: none;
   margin-top: 0.25rem;
 }
@@ -279,6 +279,11 @@
 }
 
 @media (max-width: 768px) {
+  span.tag {
+    font-size: 1rem;
+    font-family: var(--font-mono);
+  }
+
   .pg-lb__prev,
   .pg-lb__next {
     display: none;
