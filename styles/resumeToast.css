@@ -11,14 +11,20 @@
 }
 
 @keyframes resumeNudge {
-  0%   { transform: translateY(0); }
-  40%  { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Launcher */
 .resume-launcher {
-  border: 1px solid rgba(255,255,255,0.16);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   background: #0f172a;
   color: #f8fafc;
   border-radius: 999px;
@@ -26,7 +32,7 @@
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -38,9 +44,9 @@
   max-width: calc(100vw - 36px);
   background: #0f172a;
   color: #f8fafc;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
   padding: 14px;
 }
 
@@ -78,6 +84,9 @@
 }
 
 .resume-secondary {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   color: #f8fafc;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }

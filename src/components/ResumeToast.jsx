@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { downloadResumePdf } from "../lib/resume";
+import { GoSidebarCollapse } from "react-icons/go";
 import "../../styles/resumeToast.css";
 
 export default function ResumeWidget({ delayMs = 2500 }) {
@@ -46,7 +47,7 @@ export default function ResumeWidget({ delayMs = 2500 }) {
         </button>
       ) : (
         <div className="resume-panel">
-          <div className="resume-title">Download my resume?</div>
+          <div className="resume-title">Need my resume?</div>
           <div className="resume-subtitle">One-click PDF download.</div>
 
           <div className="resume-actions">
@@ -54,7 +55,8 @@ export default function ResumeWidget({ delayMs = 2500 }) {
               Download PDF
             </button>
             <button className="resume-secondary" onClick={close}>
-              Minimize
+              <GoSidebarCollapse />
+              Close
             </button>
           </div>
         </div>

@@ -13,7 +13,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 TODO:
-- fix typography
 - update ucf
 - add homerun to work experience
 - edit resume toast

@@ -1,5 +1,5 @@
 export const RESUME_PDF_URL =
-  "https://docs.google.com/document/d/YOUR_DOC_ID/export?format=pdf";
+  "https://docs.google.com/document/d/1gy-_d0srm5Z0vXvxguSmjiPJPHFZmVM2jv9DpX7_ghI/export?format=pdf";
 
 export function downloadResumePdf() {
   const a = document.createElement("a");
