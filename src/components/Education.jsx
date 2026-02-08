@@ -326,6 +326,7 @@ export const Education = () => {
                 }}
               />
             </div>
+
             <div className="merit-desc">
               <p>
                 The CXC regional merit list is the pinnacle of academic prestige

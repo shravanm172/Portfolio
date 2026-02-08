@@ -1,9 +1,11 @@
-.row.float-wrap {
-  padding-right: 4rem; /* same value as timeline-content margin */
-}
+/* .row.float-wrap {
+  padding-right: 4rem;
+} */
+/* same value as timeline-content margin */
 
 /* Education Styles
 -------------------------------------------------------------*/
+
 .education {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -158,7 +160,7 @@ img.logo {
   margin-top: 3rem;
 }
 
-/* Merit List Styles --------------------------------*/
+/* -------------------------------------------Merit List Styles --------------------------------*/
 .merit-list-row {
   display: flex;
   flex-direction: row;
@@ -182,8 +184,6 @@ img.logo {
 .merit-desc .tight li {
   margin: 0.25rem 0;
 }
-
-/* ========== Merit row: float-wrap (text wraps under carousel) ========== */
 
 .row.merit-list-row.float-wrap {
   display: block !important; /* kill flex so text can wrap */
@@ -213,10 +213,16 @@ img.logo {
   width: 100%;
 }
 
-/* Mobile: stack (no float) */
 @media (max-width: 768px) {
+  /* Mobile: stack (no float) */
+  .row.merit-list-row.float-wrap {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .row.merit-list-row.float-wrap .merit-col {
-    float: none;
+    float: none !important;
     width: 100%;
     max-width: 420px;
     margin: 0 auto 1rem;
@@ -339,18 +345,13 @@ img.logo {
   .timeline-content.hvc-content {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
   }
 
   .mobile-hvc {
     display: flex !important;
     flex-direction: row;
     gap: 1rem;
-  }
-
-  .row.merit-list-row {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1.5rem;
   }
 
   .merit-body h3 {
