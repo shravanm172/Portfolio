@@ -149,7 +149,13 @@ html {
 }
 
 section {
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 768px) {
+  section {
+    margin-bottom: 6rem;
+  }
 }
 
 /* Footer Styles ---------------------------------------------------------------------*/
