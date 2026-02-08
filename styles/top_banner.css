@@ -276,4 +276,15 @@ section#home > * {
     opacity: 1;
     pointer-events: auto;
   }
+
+  .mobile-nav {
+    /* ... keep all your existing styles ... */
+    transform: translateX(calc(110% + var(--drawer-drag, 0px)));
+    transition: transform 220ms ease;
+    touch-action: none; /* important: allow our swipe without page scrolling */
+  }
+
+  .mobile-nav.is-open {
+    transform: translateX(var(--drawer-drag, 0px));
+  }
 }
