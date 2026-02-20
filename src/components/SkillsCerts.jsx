@@ -4,6 +4,13 @@ import "../../styles/skills.css";
 
 const CERTIFICATE_ITEMS = [
   {
+    src: "/images/CS50x.png",
+    title: "CS50x: Introduction to Computer Science",
+    desc: "Completed Harvard’s flagship computer science course covering foundational and advanced topics including C, Python, data structures, algorithms, memory management, SQL, web development, and Flask.",
+    issuer: "edX, Harvard University",
+    year: "2026",
+  },
+  {
     src: "/images/mozilla-js-cert.jpg",
     title: "JavaScript Foundations Professional Certificate",
     desc: "Learned the fundamentals of JavaScript, including the concepts of the core syntax, functions, DOM model, etc. This training has served as my foundation for building interactive frontend components and full-stack web apps.",
