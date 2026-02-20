@@ -4,7 +4,7 @@ import "../../styles/experience.css"; // same CSS base as WporkExperience
 
 const PROJECTS = [
   {
-    title: "EquiTrack- Portfolio Analysis Dashboard",
+    title: "EquiTrack- Portfolio Analysis Dashboard & Simulation Engine",
     blurb:
       "EquiTrack is a full-stack portfolio analytics and market simulation platform designed to analyze, stress test, and forecast equity portfolio performance across varying market regimes.",
     bullets: [
@@ -15,7 +15,7 @@ const PROJECTS = [
     skills: ["Python", "Pandas", "React", "Flask", "REST APIs", "SQLite"],
     repo: "https://github.com/shravanm172/EquiTrack.git",
     live_demo: "https://equi-track.vercel.app",
-    images: ["/images/equitrack-demo.png"],
+    images: ["/images/equitrack-demo-1.png", "/images/equitrack-demo-2.png"],
   },
   {
     title: "All Fours — Multiplayer Web App",
