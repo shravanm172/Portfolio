@@ -1,13 +1,17 @@
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import LightboxOverlay from "./lightbox/LightboxOverlay";
+import { useLightbox } from "./lightbox/useLightbox";
 import "../../styles/emblaCarousel.css";
 
 export default function EmblaMeritCarousel({
   items = [], // [{ src, title, desc, href }]
   options = { loop: true, align: "center", skipSnaps: false },
   variant = "merit", // "merit" or "certificates"
+  lightbox = variant === "merit",
 }) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const { openIdx, setOpenIdx, close, prev, next } = useLightbox(items.length);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canPrev, setCanPrev] = useState(false);
@@ -62,6 +66,25 @@ export default function EmblaMeritCarousel({
                     src={it.src}
                     alt={it.title || `Merit list ${idx + 1}`}
                     loading="lazy"
+                    role={lightbox ? "button" : undefined}
+                    tabIndex={lightbox ? 0 : undefined}
+                    onClick={
+                      lightbox
+                        ? () => {
+                            setOpenIdx(idx);
+                          }
+                        : undefined
+                    }
+                    onKeyDown={
+                      lightbox
+                        ? (e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              setOpenIdx(idx);
+                            }
+                          }
+                        : undefined
+                    }
                   />
                 </div>
 
@@ -69,10 +92,11 @@ export default function EmblaMeritCarousel({
                   {it.title && <h3>{it.title}</h3>}
                   {(it.issuer || it.year) && (
                     <div className="merit-meta">
-                      {/* {it.issuer && (
-                        <span className="merit-issuer">{it.issuer}</span>
-                      )} */}
-                      {it.year && <span className="merit-year">{it.year}</span>}
+                      <span className="merit-year">
+                        {it.year && it.issuer
+                          ? `${it.year} || ${it.issuer}`
+                          : it.year || it.issuer}
+                      </span>
                     </div>
                   )}
                   {it.desc && <p className="muted">{it.desc}</p>}
@@ -132,6 +156,16 @@ export default function EmblaMeritCarousel({
           ))}
         </div>
       </div>
+
+      {lightbox && (
+        <LightboxOverlay
+          images={items.map((item) => item.src)}
+          openIdx={openIdx}
+          close={close}
+          prev={prev}
+          next={next}
+        />
+      )}
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
 
 const Portal = ({ children }) =>
   typeof document === "undefined"
@@ -83,7 +84,7 @@ export default function ProjectGallery({ images = [] }) {
                 onClick={close}
                 aria-label="Close"
               >
-                ×
+                <FiX />
               </button>
 
               {images.length > 1 && (
@@ -96,7 +97,7 @@ export default function ProjectGallery({ images = [] }) {
                     }}
                     aria-label="Previous"
                   >
-                    ‹
+                    <FiChevronLeft />
                   </button>
                   <button
                     className="pg-lb__nav pg-lb__next"
@@ -106,7 +107,7 @@ export default function ProjectGallery({ images = [] }) {
                     }}
                     aria-label="Next"
                   >
-                    ›
+                    <FiChevronRight />
                   </button>
                 </>
               )}

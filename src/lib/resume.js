@@ -5,7 +5,7 @@ export function downloadResumePdf() {
   const a = document.createElement("a");
   a.href = RESUME_PDF_URL;
 
-  // Keeps user on your site; also helps avoid replacing your current tab
+  // Keeps user on the site; also helps avoid replacing your current tab
   a.target = "_blank";
   a.rel = "noopener noreferrer";
 
