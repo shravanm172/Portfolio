@@ -92,11 +92,10 @@ export default function EmblaMeritCarousel({
                   {it.title && <h3>{it.title}</h3>}
                   {(it.issuer || it.year) && (
                     <div className="merit-meta">
-                      <span className="merit-year">
-                        {it.year && it.issuer
-                          ? `${it.year} || ${it.issuer}`
-                          : it.year || it.issuer}
-                      </span>
+                      {/* {it.issuer && (
+                        <span className="merit-issuer">{it.issuer}</span>
+                      )} */}
+                      {it.year && <span className="merit-year">{it.year}</span>}
                     </div>
                   )}
                   {it.desc && <p className="muted">{it.desc}</p>}

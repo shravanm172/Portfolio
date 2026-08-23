@@ -4,6 +4,31 @@ import "../../styles/experience.css";
 
 const EXPERIENCE = [
   {
+    role: "Software Engineer Intern",
+    org: "Avidyne Corporation",
+    period: "May 11th - Present",
+    desc: "Developing real-time, embedded software for avionics flight displays and instrumentation in a safety-critical, FAA-aligned engineering environment.",
+    projects: [
+      {
+        title: "Integrated Flight Display Software",
+        images: ["/images/avi_logo.png", "/images/ifds.png"],
+        details: [
+          "Developed and debugged real-time, embedded software for avionics flight displays in a safety-critical environment.",
+          "Wrote automated and manual test scripts to verify compliance with FAA-aligned testing standards.",
+          "Proposed and implemented code enhancements through a formal, multi-engineer review process, contributing to shipped product releases.",
+          "Contributed to requirements traceability, linking test cases to documented software requirements.",
+        ],
+        skills: [
+          "C++",
+          "Embedded Systems",
+          "Real-Time Systems",
+          "Software Verification",
+          "Requirements Traceability",
+        ],
+      },
+    ],
+  },
+  {
     role: "Shravan's Web Solutions",
     org: "Personal startup Business",
     period: "June 2024 – Present",
