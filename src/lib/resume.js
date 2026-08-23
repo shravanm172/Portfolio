@@ -1,5 +1,6 @@
 export const RESUME_PDF_URL =
-  "https://docs.google.com/document/d/1gy-_d0srm5Z0vXvxguSmjiPJPHFZmVM2jv9DpX7_ghI/export?format=pdf";
+  "https://docs.google.com/document/d/1ImqRpPD1K6U-uzGjDgsoQop9B0_LfbzqUtwBXHJFZOo/edit?usp=sharing";
+  
 
 export function downloadResumePdf() {
   const a = document.createElement("a");
