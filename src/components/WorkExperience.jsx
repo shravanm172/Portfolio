@@ -6,7 +6,7 @@ const EXPERIENCE = [
   {
     role: "Software Engineer Intern",
     org: "Avidyne Corporation",
-    period: "May 11th - Present",
+    period: "May 2026 - Present",
     desc: "Developing real-time, embedded software for avionics flight displays and instrumentation in a safety-critical, FAA-aligned engineering environment.",
     projects: [
       {
@@ -29,16 +29,17 @@ const EXPERIENCE = [
     ],
   },
   {
-    role: "Shravan's Web Solutions",
-    org: "Personal startup Business",
-    period: "June 2024 – Present",
-    desc: "Designed and deployed full-stack web solutions for various clientelles",
+    role: "Freelance Web Developer",
+    org: "Self-Employed",
+    period: "June 2024 – May 2026",
+    desc: "Designed and deployed full-stack web solutions with custom-built admin dashboards for various small-business clients, replacing generic, cluttered third-party platforms with tools tailored to each client's actual workflow, giving non-technical users direct control over their own content and supporting their organizational growth through better online visibility",
     projects: [
       {
         title: "Homerun Diesel Engine and Emissions Repair",
         images: ["/images/homerun1.png", "/images/homerun2.png"],
         details: [
           "Designed and developed a professional business website",
+          "Built a custom admin dashboard allowing the owner to manage service listing and apply promos and discounts without technical assistance",
           "Integrated Calendly for appointment scheduling and synchronized bookings with Google Calendar.",
           "Streamlined business operations by setting up professional email accounts and calendar workflows.",
           "Translated customer requirements into clearly defined service descriptions aligned with real-world engineering needs.",
@@ -56,7 +57,7 @@ const EXPERIENCE = [
         ],
         details: [
           "Built custom event calendar with add/edit/delete capabilities for admin users.",
-          "Designed admin dashboard for managing school events, news, and announcements.",
+          "Designed admin dashboard for managing school events, news, and announcements with minimal technical experience required",
           "Created Student Record Management System for storing and manipulating biodata, grades, guardians, and medical information.",
           "Implemented role-based access with authentication: admin vs public read-only views.",
         ],
@@ -75,6 +76,7 @@ const EXPERIENCE = [
         images: ["/images/myplace1.png", "/images/myplace3.png"],
         details: [
           "Built a multi-page property listing website with structured property views and basic filtering.",
+          "Engineered a custom admin dashboard letting the client create, edit, and delte listings directly",
           "Implemented individual property pages using template-based rendering and dynamic data injection.",
           "Developed custom slideshow and image gallery components to showcase property listings.",
         ],
