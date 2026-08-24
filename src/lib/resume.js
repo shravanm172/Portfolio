@@ -1,5 +1,5 @@
 export const RESUME_PDF_URL =
-  "https://docs.google.com/document/d/1ImqRpPD1K6U-uzGjDgsoQop9B0_LfbzqUtwBXHJFZOo/edit?usp=sharing";
+  "https://drive.google.com/file/d/1IQF34lIy0daVN3dhziD9Qo0vwZBIMVx4";
   
 
 export function downloadResumePdf() {
