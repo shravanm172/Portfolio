@@ -22,7 +22,7 @@ export default function TopBanner({
     github: "https://github.com/shravanm172",
     linkedin: "https://www.linkedin.com/in/shravan-maharaj-840057349",
   },
-  about = "I am a passionate aspiring software engineer from Trinidad & Tobago with robust skills in application and web development and unwavering commitment to learning and growth.",
+  about = "I'm a Computer Science student at UCF, by way of a full-ride scholarship from Trinidad & Tobago, working toward AI/ML for fintech. My background so far is in real-time embedded systems engineering and full-stack development. I'm now seeking to apply that same rigor to statistics, applied math, and machine learning.",
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -173,7 +173,7 @@ export default function TopBanner({
 
         <div className="main-banner-content">
           <h1>{name}</h1>
-          <h2>BS Computer Science || Sophomore</h2>
+          <h2>BS Computer Science || Junior</h2>
           <h3>{email}</h3>
 
           <div className="socials">
