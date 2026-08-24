@@ -76,7 +76,7 @@ const EXPERIENCE = [
         images: ["/images/myplace1.png", "/images/myplace3.png"],
         details: [
           "Built a multi-page property listing website with structured property views and basic filtering.",
-          "Engineered a custom admin dashboard letting the client create, edit, and delte listings directly",
+          "Engineered a custom admin dashboard letting the client create, edit, and delete listings directly",
           "Implemented individual property pages using template-based rendering and dynamic data injection.",
           "Developed custom slideshow and image gallery components to showcase property listings.",
         ],
